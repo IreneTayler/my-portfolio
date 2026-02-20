@@ -1,51 +1,45 @@
-# My Portfolio
+# Task Manager (React)
 
-This is my personal portfolio website built with React and Vite.
-It showcases my projects, skills, and background as a Frontend Developer.
-
----
-
-## Live Demo
-https://my-portfolio-theta-sandy-37.vercel.app/
+A simple and clean task management application built with React and Vite.  
+Users can add, complete, and delete tasks. The project demonstrates component-based architecture and state management.
 
 ---
 
-## About Me
+## 🔗 Live Demo
 
-Frontend Developer focused on building clean, responsive, and user-friendly web applications using React.
-
-- Bachelor of Software Engineering
-- Passionate about modern UI and component-based architecture
-- Interested in building real-world web services
+👉 https://my-portfolio-theta-sandy-37.vercel.app/
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - React
 - Vite
 - JavaScript (ES6+)
 - CSS
-- Git & GitHub
+- Vercel (Deployment)
 
 ---
 
-## Features
+## ✨ Features
 
-- Responsive design (desktop & mobile)
-- Project showcase section
-- About / Skills / Contact sections
-- Clean and simple UI
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- Responsive and clean UI
 - Fast build with Vite
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
 ├─ components/
-├─ pages/
+│   ├─ Header.jsx
+│   ├─ TaskForm.jsx
+│   ├─ TaskList.jsx
+│   └─ TaskItem.jsx
 ├─ App.jsx
 ├─ main.jsx
 public/
@@ -53,8 +47,26 @@ package.json
 vite.config.js
 ```
 
-## Installation
+---
+
+## ⚙️ Installation
 
 ```bash
+git clone https://github.com/IreneTayler/my-portfolio.git
+cd my-portfolio
 npm install
 npm run dev
+```
+
+---
+
+## 🚀 Deployment
+
+The project is deployed using Vercel.
+
+---
+
+## 👩‍💻 Author
+
+**Irene Tayler**  
+Frontend Developer (React)
