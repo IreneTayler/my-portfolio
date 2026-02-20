@@ -38,6 +38,7 @@ Frontend Developer focused on building clean, responsive, and user-friendly web 
 - Clean and simple UI
 - Fast build with Vite
 
+---
 
 ## Project Structure
 
@@ -47,6 +48,7 @@ pages/
 App.jsx
 main.jsx
 
+---
 
 ## Installation
 
