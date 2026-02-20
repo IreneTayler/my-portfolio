@@ -4,7 +4,7 @@ function App() {
       <div className="container">
 
         {/* Hero */}
-        <section className="hero">
+        <section className="hero fadeUp">
           <img src="/profile.jpg" alt="profile" className="photo" />
 
           <div>
@@ -12,7 +12,7 @@ function App() {
             <p className="role">Frontend Developer (React)</p>
             <p className="intro">
               I build modern, responsive web applications with React.
-              Passionate about clean UI, user experience, and continuous growth.
+              Passionate about clean UI, great user experience, and continuous growth.
             </p>
 
             <div className="heroButtons">
@@ -23,28 +23,21 @@ function App() {
         </section>
 
         {/* About */}
-        <section className="section">
+        <section className="section fadeUp delay1">
           <h2>About Me</h2>
           <p>
             I am a frontend developer specializing in React and modern JavaScript.
             I focus on building clean, maintainable, and user-friendly web applications.
           </p>
-
           <p>
-            After graduating with a degree in Software Engineering in 2021,
-            I focused on strengthening my frontend development skills by building
-            real-world projects and learning modern web technologies.
-          </p>
-
-          <p>
-            I enjoy turning ideas into real products and continuously improving my
-            technical skills. My goal is to grow as a professional frontend developer
-            and contribute to meaningful products.
+            After graduating in 2021 with a degree in Software Engineering,
+            I strengthened my frontend skills by building real-world projects
+            and learning modern technologies.
           </p>
         </section>
 
         {/* Skills */}
-        <section className="section">
+        <section className="section fadeUp delay2">
           <h2>Skills</h2>
           <div className="skills">
             <span>React</span>
@@ -57,7 +50,7 @@ function App() {
         </section>
 
         {/* Projects */}
-        <section className="section">
+        <section className="section fadeUp delay3">
           <h2>Projects</h2>
 
           <div className="project">
@@ -68,10 +61,16 @@ function App() {
             </p>
 
             <div className="links">
-              <a href="https://task-manager-five-phi-15.vercel.app/" target="_blank">
+              <a
+                href="https://task-manager-five-phi-15.vercel.app/"
+                target="_blank"
+              >
                 Live Demo
               </a>
-              <a href="https://github.com/IreneTayler/task-manager" target="_blank">
+              <a
+                href="https://github.com/IreneTayler/task-manager"
+                target="_blank"
+              >
                 GitHub
               </a>
             </div>
@@ -79,7 +78,7 @@ function App() {
         </section>
 
         {/* Contact */}
-        <section className="section">
+        <section className="section fadeUp delay4">
           <h2>Contact</h2>
           <p>Email: your-email@example.com</p>
           <p>GitHub: github.com/IreneTayler</p>
@@ -106,6 +105,7 @@ function App() {
           width: 100%;
         }
 
+        /* Hero */
         .hero {
           display: flex;
           gap: 30px;
@@ -123,20 +123,25 @@ function App() {
 
         .role {
           color: #94a3b8;
-          margin-bottom: 10px;
         }
 
         .intro {
           color: #cbd5f5;
-          margin-bottom: 15px;
+          margin: 10px 0 15px;
         }
 
         .heroButtons a {
           margin-right: 15px;
           color: #60a5fa;
           text-decoration: none;
+          transition: opacity 0.2s;
         }
 
+        .heroButtons a:hover {
+          opacity: 0.7;
+        }
+
+        /* Sections */
         .section {
           margin-bottom: 40px;
         }
@@ -147,25 +152,57 @@ function App() {
           margin-bottom: 16px;
         }
 
+        /* Skills */
         .skills span {
           background: #111827;
           padding: 6px 12px;
           margin-right: 10px;
           border-radius: 20px;
           border: 1px solid #1f2937;
+          transition: transform 0.2s;
         }
 
+        .skills span:hover {
+          transform: translateY(-3px);
+        }
+
+        /* Project Card */
         .project {
           background: #111827;
           padding: 20px;
           border-radius: 10px;
           border: 1px solid #1f2937;
+          transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         .links a {
           margin-right: 16px;
           color: #60a5fa;
           text-decoration: none;
+        }
+
+        /* Animation */
+        .fadeUp {
+          opacity: 0;
+          transform: translateY(20px);
+          animation: fadeUp 0.6s ease forwards;
+        }
+
+        .delay1 { animation-delay: 0.2s; }
+        .delay2 { animation-delay: 0.4s; }
+        .delay3 { animation-delay: 0.6s; }
+        .delay4 { animation-delay: 0.8s; }
+
+        @keyframes fadeUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
       `}</style>
     </div>
