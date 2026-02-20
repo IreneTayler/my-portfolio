@@ -6,32 +6,49 @@ import Projects from "./components/Projects";
 function App() {
   return (
     <div style={styles.page}>
-      <div style={styles.container}>
-        <h1 style={styles.title}>Irene Tayler</h1>
-        <p style={styles.subtitle}>Frontend Developer (React)</p>
+      <div style={styles.card}>
+        <h1 style={styles.name}>Irene Tayler</h1>
+        <p style={styles.role}>Frontend Developer (React)</p>
 
         {/* About */}
         <section style={styles.section}>
           <h2>About Me</h2>
           <p>
-            I'm a front-end developer developing React-based websites. I prioritize user experience and a rich UI.
+            I am a frontend developer specializing in React. 
+            I enjoy building clean, user-friendly web applications and improving user experience through simple and effective UI design.
           </p>
+        </section>
+
+        {/* Skills */}
+        <section style={styles.section}>
+          <h2>Skills</h2>
+          <div style={styles.skills}>
+            <span style={styles.tag}>React</span>
+            <span style={styles.tag}>JavaScript</span>
+            <span style={styles.tag}>HTML</span>
+            <span style={styles.tag}>CSS</span>
+            <span style={styles.tag}>Git</span>
+            <span style={styles.tag}>Vite</span>
+          </div>
         </section>
 
         {/* Projects */}
         <section style={styles.section}>
           <h2>Projects</h2>
 
-          <div style={styles.card}>
+          <div style={styles.project}>
             <h3>Task Manager</h3>
-            <p>React app with the ability to add, complete, and delete tasks</p>
+            <p>
+              A simple task management application built with React. 
+              Users can add, complete, and delete tasks.
+            </p>
 
-            <div>
+            <div style={styles.buttons}>
               <a
                 href="https://task-manager-five-phi-15.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
-                style={styles.button}
+                style={styles.primaryBtn}
               >
                 Live Demo
               </a>
@@ -40,7 +57,7 @@ function App() {
                 href="https://github.com/IreneTayler/task-manager"
                 target="_blank"
                 rel="noreferrer"
-                style={styles.buttonOutline}
+                style={styles.secondaryBtn}
               >
                 GitHub
               </a>
@@ -51,7 +68,7 @@ function App() {
         {/* Contact */}
         <section style={styles.section}>
           <h2>Contact</h2>
-          <p>Email: Irene19tayler@outlook.com</p>
+          <p>Email: Irene19tyaler@outlook.com</p>
           <p>GitHub: https://github.com/IreneTayler</p>
         </section>
       </div>
@@ -61,50 +78,65 @@ function App() {
 
 const styles = {
   page: {
-    background: "#f5f6fa",
     minHeight: "100vh",
+    background: "linear-gradient(135deg, #667eea, #764ba2)",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     padding: "40px 20px",
-    fontFamily: "Arial",
+    fontFamily: "Arial, sans-serif",
   },
-  container: {
-    maxWidth: "800px",
-    margin: "0 auto",
+  card: {
     background: "white",
+    maxWidth: "800px",
+    width: "100%",
     padding: "40px",
-    borderRadius: "10px",
-    boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
+    borderRadius: "15px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
   },
-  title: {
+  name: {
     marginBottom: "5px",
   },
-  subtitle: {
+  role: {
     color: "#666",
     marginBottom: "30px",
   },
   section: {
-    marginBottom: "40px",
+    marginBottom: "35px",
   },
-  card: {
+  skills: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
+  },
+  tag: {
+    background: "#f1f3f5",
+    padding: "6px 12px",
+    borderRadius: "20px",
+    fontSize: "14px",
+  },
+  project: {
     border: "1px solid #eee",
     padding: "20px",
-    borderRadius: "8px",
+    borderRadius: "10px",
   },
-  button: {
-    display: "inline-block",
-    marginRight: "10px",
-    padding: "8px 14px",
-    background: "#0070f3",
+  buttons: {
+    marginTop: "10px",
+  },
+  primaryBtn: {
+    background: "#667eea",
     color: "white",
+    padding: "8px 16px",
+    borderRadius: "6px",
     textDecoration: "none",
-    borderRadius: "5px",
+    marginRight: "10px",
   },
-  buttonOutline: {
-    display: "inline-block",
-    padding: "8px 14px",
-    border: "1px solid #0070f3",
-    color: "#0070f3",
+  secondaryBtn: {
+    border: "1px solid #667eea",
+    color: "#667eea",
+    padding: "8px 16px",
+    borderRadius: "6px",
     textDecoration: "none",
-    borderRadius: "5px",
   },
 };
 
