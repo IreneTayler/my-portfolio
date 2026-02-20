@@ -1,49 +1,43 @@
-# Task Manager
+# My Portfolio
 
-A modern task management web application built with React.
-
----
-
-## Features
-
-- Add new tasks
-- Mark tasks as completed
-- Delete tasks
-- Filter tasks (All / Active / Completed)
-- Data saved using LocalStorage
-- Clean and responsive UI
-
----
-
-## Tech Stack
-
-- React
-- Zustand
-- Vite
-- JavaScript
-- CSS
-
----
-
-## Project Structure
-
-src/
-  components/
-    TodoInput.jsx
-    TodoList.jsx
-    TodoItem.jsx
-    Filter.jsx
-  store/
-    todoStore.js
-  App.jsx
+This is my personal portfolio website built with React and Vite.
+It showcases my projects, skills, and background as a Frontend Developer.
 
 ---
 
 ## Live Demo
 https://my-portfolio-theta-sandy-37.vercel.app/
 
-## Installation
+---
 
-```bash
-npm install
-npm run dev
+## About Me
+
+Frontend Developer focused on building clean, responsive, and user-friendly web applications using React.
+
+- Bachelor of Software Engineering
+- Passionate about modern UI and component-based architecture
+- Interested in building real-world web services
+
+---
+
+## Tech Stack
+
+- React
+- Vite
+- JavaScript (ES6+)
+- CSS
+- Git & GitHub
+
+---
+
+## Features
+
+- Responsive design (desktop & mobile)
+- Project showcase section
+- About / Skills / Contact sections
+- Clean and simple UI
+- Fast build with Vite
+
+---
+
+## Project Structure
