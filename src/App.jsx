@@ -7,51 +7,52 @@ function App() {
   return (
     <div style={styles.page}>
       <div style={styles.container}>
-        {/* Header */}
-        <h1 style={styles.name}>Irene Tayler</h1>
-        <p style={styles.role}>React Developer</p>
+        <h1 style={styles.title}>Irene Tayler</h1>
+        <p style={styles.subtitle}>Frontend Developer (React)</p>
 
         {/* About */}
         <section style={styles.section}>
           <h2>About Me</h2>
           <p>
-            Frontend developer specializing in React. 
-            I build clean, responsive, and user-friendly web applications.
+            I'm a front-end developer developing React-based websites. I prioritize user experience and a rich UI.
           </p>
-        </section>
-
-        {/* Skills */}
-        <section style={styles.section}>
-          <h2>Skills</h2>
-          <ul>
-            <li>React</li>
-            <li>JavaScript (ES6+)</li>
-            <li>HTML / CSS</li>
-            <li>Vite</li>
-            <li>Git / GitHub</li>
-          </ul>
         </section>
 
         {/* Projects */}
         <section style={styles.section}>
           <h2>Projects</h2>
 
-          <div style={styles.projectCard}>
+          <div style={styles.card}>
             <h3>Task Manager</h3>
-            <p>
-              A simple task management app built with React.
-              Features include adding, completing, and deleting tasks.
-            </p>
+            <p>React app with the ability to add, complete, and delete tasks</p>
 
-            <a
-              href="https://task-manager-five-phi-15.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-              style={styles.button}
-            >
-              Live Demo
-            </a>
+            <div>
+              <a
+                href="https://task-manager-five-phi-15.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                style={styles.button}
+              >
+                Live Demo
+              </a>
+
+              <a
+                href="https://github.com/IreneTayler/task-manager"
+                target="_blank"
+                rel="noreferrer"
+                style={styles.buttonOutline}
+              >
+                GitHub
+              </a>
+            </div>
           </div>
+        </section>
+
+        {/* Contact */}
+        <section style={styles.section}>
+          <h2>Contact</h2>
+          <p>Email: Irene19tayler@outlook.com</p>
+          <p>GitHub: https://github.com/IreneTayler</p>
         </section>
       </div>
     </div>
@@ -60,40 +61,48 @@ function App() {
 
 const styles = {
   page: {
-    minHeight: "100vh",
     background: "#f5f6fa",
+    minHeight: "100vh",
     padding: "40px 20px",
-    fontFamily: "Arial, sans-serif",
+    fontFamily: "Arial",
   },
   container: {
     maxWidth: "800px",
     margin: "0 auto",
-    background: "#fff",
+    background: "white",
     padding: "40px",
     borderRadius: "10px",
     boxShadow: "0 5px 20px rgba(0,0,0,0.1)",
   },
-  name: {
+  title: {
     marginBottom: "5px",
   },
-  role: {
+  subtitle: {
     color: "#666",
     marginBottom: "30px",
   },
   section: {
-    marginBottom: "30px",
+    marginBottom: "40px",
   },
-  projectCard: {
+  card: {
     border: "1px solid #eee",
     padding: "20px",
     borderRadius: "8px",
   },
   button: {
     display: "inline-block",
-    marginTop: "10px",
-    padding: "10px 15px",
+    marginRight: "10px",
+    padding: "8px 14px",
     background: "#0070f3",
-    color: "#fff",
+    color: "white",
+    textDecoration: "none",
+    borderRadius: "5px",
+  },
+  buttonOutline: {
+    display: "inline-block",
+    padding: "8px 14px",
+    border: "1px solid #0070f3",
+    color: "#0070f3",
     textDecoration: "none",
     borderRadius: "5px",
   },
