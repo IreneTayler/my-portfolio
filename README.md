@@ -48,7 +48,6 @@ pages/
 App.jsx
 main.jsx
 
----
 
 ## Installation
 
