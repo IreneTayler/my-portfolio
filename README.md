@@ -43,10 +43,10 @@ Frontend Developer focused on building clean, responsive, and user-friendly web 
 ## Project Structure
 
 src/
-components/
-pages/
-App.jsx
-main.jsx
+  components/
+  pages/
+  App.jsx
+  main.jsx
 
 ---
 
