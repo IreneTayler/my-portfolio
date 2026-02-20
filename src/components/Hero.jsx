@@ -1,169 +1,171 @@
 import { motion } from "framer-motion";
 import profile from "../assets/profile.jpg";
-import { typography } from "../store/typography";
 
 function Hero() {
   return (
-    <section id="home" style={styles.section}>
-      {/* Background Glow */}
-      <div style={styles.glow1} />
-      <div style={styles.glow2} />
+    <section
+      id="home"
+      style={{
+        minHeight: "60vh",
+        display: "flex",
+        alignItems: "center",
+        padding: "80px 20px",
+        background: "linear-gradient(180deg, #ffffff, #f8fafc)"
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1100px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1.2fr 0.8fr",
+          gap: "40px",
+          alignItems: "center"
+        }}
+      >
+        {/* LEFT */}
+        <div>
+          {/* Role */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              color: "#6366f1",
+              fontWeight: "600",
+              marginBottom: "10px",
+              fontSize: "14px",
+              letterSpacing: "1px"
+            }}
+          >
+            React / Frontend / Full Stack Developer
+          </motion.p>
 
-      <div style={styles.container}>
-        {/* Left */}
-        <motion.div
-          style={styles.left}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p style={styles.role}>React / Full Stack Developer</p>
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            style={{
+              fontSize: "48px",
+              lineHeight: "1.2",
+              color: "#0f172a",
+              marginBottom: "20px"
+            }}
+          >
+            Hi, I’m{" "}
+            <span
+              style={{
+                background: "linear-gradient(135deg, #3b82f6, #6366f1)",
+                WebkitBackgroundClip: "text",
+                color: "transparent"
+              }}
+            >
+              Irene Tayler
+            </span>
+          </motion.h1>
 
-          <h1 style={typography.heroTitle}>
-            Hi, I'm <span style={styles.gradientText}>Irene</span>
-          </h1>
+          {/* 핵심 문장 (중요) */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            style={{
+              fontSize: "18px",
+              color: "#475569",
+              marginBottom: "30px",
+              maxWidth: "520px",
+              lineHeight: "1.6"
+            }}
+          >
+            I build scalable, production-ready web applications using React,
+            modern architecture, and performance-focused development.
+          </motion.p>
 
-          <p style={typography.body}>
-            I build scalable, production-ready web applications with clean
-            architecture, modern UI, and strong performance.
-          </p>
-
-          <div style={styles.buttons}>
-            <a href="/resume.pdf" style={styles.primary}>
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}
+          >
+            <a
+              href="/resume.pdf"
+              style={{
+                padding: "14px 28px",
+                background: "linear-gradient(135deg, #3b82f6, #6366f1)",
+                color: "white",
+                borderRadius: "10px",
+                textDecoration: "none",
+                fontWeight: "600",
+                boxShadow: "0 6px 20px rgba(99,102,241,0.3)",
+                transition: "all 0.3s ease"
+              }}
+            >
               Download Resume
             </a>
-            <a href="#projects" style={styles.secondary}>
+
+            <a
+              href="#projects"
+              style={{
+                padding: "14px 28px",
+                border: "1px solid #cbd5e1",
+                borderRadius: "10px",
+                textDecoration: "none",
+                color: "#0f172a",
+                fontWeight: "600",
+                background: "white"
+              }}
+            >
               View Projects
             </a>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* Right – Floating Image */}
+        {/* RIGHT (Photo) */}
         <motion.div
-          style={styles.right}
-          animate={{ y: [0, -12, 0] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+          style={{
+            display: "flex",
+            justifyContent: "center"
           }}
         >
-          <img src={profile} alt="profile" style={styles.image} />
+          <div
+            style={{
+              width: "260px",
+              height: "320px",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+              position: "relative"
+            }}
+          >
+            <img
+              src={profile}
+              alt="Irene"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover"
+              }}
+            />
+
+            {/* Glow effect */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(180deg, rgba(99,102,241,0.15), transparent)"
+              }}
+            />
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    position: "relative",
-    padding: "120px 20px 60px",
-    overflow: "hidden",
-    background: "#f8fafc",
-  },
-
-  container: {
-    maxWidth: "1100px",
-    margin: "0 auto",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: "40px",
-    flexWrap: "wrap",
-  },
-
-  left: {
-    flex: 1,
-    minWidth: "300px",
-  },
-
-  role: {
-    color: "#2563eb",
-    fontWeight: 600,
-    marginBottom: "10px",
-  },
-
-  title: {
-    fontSize: "42px",
-    fontWeight: 700,
-    marginBottom: "16px",
-    color: "#0f172a",
-  },
-
-  gradientText: {
-    background: "linear-gradient(90deg, #2563eb, #7c3aed)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-  },
-
-  desc: {
-    color: "#475569",
-    lineHeight: 1.6,
-    maxWidth: "520px",
-    marginBottom: "24px",
-  },
-
-  buttons: {
-    display: "flex",
-    gap: "16px",
-  },
-
-  primary: {
-    padding: "12px 22px",
-    background: "linear-gradient(90deg, #2563eb, #7c3aed)",
-    color: "#fff",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: 500,
-    boxShadow: "0 6px 18px rgba(37,99,235,0.25)",
-    transition: "0.3s",
-  },
-
-  secondary: {
-    padding: "12px 22px",
-    border: "1px solid #2563eb",
-    color: "#2563eb",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: 500,
-  },
-
-  right: {
-    flex: 1,
-    display: "flex",
-    justifyContent: "center",
-    minWidth: "260px",
-  },
-
-  image: {
-    width: "260px",
-    height: "260px",
-    objectFit: "cover",
-    borderRadius: "20px",
-    boxShadow: "0 20px 50px rgba(0,0,0,0.15)",
-  },
-
-  /* Background Glow */
-  glow1: {
-    position: "absolute",
-    top: "-120px",
-    left: "-120px",
-    width: "300px",
-    height: "300px",
-    background: "radial-gradient(circle, rgba(37,99,235,0.25), transparent)",
-    filter: "blur(60px)",
-  },
-
-  glow2: {
-    position: "absolute",
-    bottom: "-120px",
-    right: "-120px",
-    width: "300px",
-    height: "300px",
-    background: "radial-gradient(circle, rgba(124,58,237,0.25), transparent)",
-    filter: "blur(60px)",
-  },
-};
 
 export default Hero;

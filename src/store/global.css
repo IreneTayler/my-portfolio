@@ -1,21 +1,39 @@
-/* Reset */
+/* ========== Google Font ========== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base */
-body {
-  font-family: "Inter", sans-serif;
-  background: #F8FAFC;
-  color: #0F172A;
-  line-height: 1.6;
+/* ========== Design Tokens ========== */
+:root {
+  /* Colors */
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --text-main: #0F172A;
+  --text-secondary: #64748B;
+  --bg-main: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --border: #E2E8F0;
+
+  /* Shadow */
+  --shadow-sm: 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.12);
+
+  /* Radius */
+  --radius: 14px;
 }
 
-/* Layout */
-.section {
-  padding: 80px 0;
+/* ========== Base ========== */
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
 .container {
@@ -24,23 +42,110 @@ body {
   padding: 0 24px;
 }
 
-/* Titles */
-.section-title {
+/* ========== Typography ========== */
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h2 {
   font-size: 32px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 50px;
 }
 
-/* Card */
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Gradient Text (Hero name) */
+.gradient-text {
+  background: linear-gradient(90deg, #2563EB, #7C3AED);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========== Card System ========== */
 .card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
+  border: 1px solid var(--border);
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========== Button System ========== */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ========== Skills Tags ========== */
+.tag {
+  background: #EEF2FF;
+  color: #3730A3;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: inline-block;
+  margin: 4px;
+  transition: 0.25s;
+}
+
+.tag:hover {
+  transform: scale(1.08);
+}
+
+/* ========== Project Image ========== */
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ========== Spacing Fix (Hero → Skills gap solve) ========== */
+.section-tight {
+  padding-top: 40px;
 }

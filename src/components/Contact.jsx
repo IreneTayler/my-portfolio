@@ -1,75 +1,130 @@
 import { motion } from "framer-motion";
 
-export default function Contact() {
+function Contact() {
   return (
-    <section style={styles.section} id="contact">
-      <motion.div
-        style={styles.container}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+    <section
+      id="contact"
+      style={{
+        padding: "80px 20px",
+        background: "linear-gradient(180deg, #f8fafc, #eef2ff)"
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "900px",
+          margin: "0 auto",
+          textAlign: "center"
+        }}
       >
-        <h2 style={styles.title}>Let's Work Together</h2>
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          style={{
+            fontSize: "36px",
+            marginBottom: "10px",
+            color: "#0f172a"
+          }}
+        >
+          Let’s Work Together
+        </motion.h2>
 
-        <p style={styles.text}>
-          I am open to React / Frontend / Full Stack opportunities.
-        </p>
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: true }}
+          style={{
+            color: "#475569",
+            marginBottom: "40px",
+            fontSize: "18px"
+          }}
+        >
+          I’m open to React / Frontend / Full Stack opportunities.
+        </motion.p>
 
-        <div style={styles.links}>
-          <a href="mailto:Irene19tayler@outlook.com" style={styles.button}>
-            Email Me
-          </a>
-
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            style={styles.buttonOutline}
+        {/* Glass Card */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          style={{
+            background: "rgba(255,255,255,0.7)",
+            backdropFilter: "blur(10px)",
+            padding: "40px",
+            borderRadius: "16px",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+            display: "inline-block"
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: "16px",
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }}
           >
-            GitHub
-          </a>
-        </div>
-      </motion.div>
+            {/* Email Button */}
+            <a
+              href="mailto:Irene19tayler@outlook.com"
+              style={{
+                padding: "14px 28px",
+                background: "linear-gradient(135deg, #3b82f6, #6366f1)",
+                color: "white",
+                borderRadius: "10px",
+                textDecoration: "none",
+                fontWeight: "600",
+                boxShadow: "0 6px 20px rgba(99,102,241,0.3)",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = "translateY(-2px)";
+                e.target.style.boxShadow =
+                  "0 10px 25px rgba(99,102,241,0.4)";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = "translateY(0)";
+                e.target.style.boxShadow =
+                  "0 6px 20px rgba(99,102,241,0.3)";
+              }}
+            >
+              Email Me
+            </a>
+
+            {/* GitHub Button */}
+            <a
+              href="https://github.com/IreneTayler"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                padding: "14px 28px",
+                border: "1px solid #cbd5e1",
+                color: "#0f172a",
+                borderRadius: "10px",
+                textDecoration: "none",
+                fontWeight: "600",
+                background: "white",
+                transition: "all 0.3s ease"
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = "#f1f5f9";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = "white";
+              }}
+            >
+              GitHub
+            </a>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
 
-const styles = {
-  section: {
-    padding: "100px 20px",
-    background: "#ffffff",
-    textAlign: "center",
-  },
-  container: {
-    maxWidth: "600px",
-    margin: "0 auto",
-  },
-  title: {
-    fontSize: "34px",
-    marginBottom: "20px",
-    color: "#0f172a",
-  },
-  text: {
-    color: "#475569",
-    marginBottom: "30px",
-  },
-  links: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "16px",
-  },
-  button: {
-    padding: "12px 24px",
-    background: "#2563eb",
-    color: "#fff",
-    borderRadius: "8px",
-    textDecoration: "none",
-  },
-  buttonOutline: {
-    padding: "12px 24px",
-    border: "1px solid #2563eb",
-    color: "#2563eb",
-    borderRadius: "8px",
-    textDecoration: "none",
-  },
-};
+export default Contact;
