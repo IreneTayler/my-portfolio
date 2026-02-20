@@ -14,8 +14,11 @@ function App() {
         <section style={styles.section}>
           <h2>About Me</h2>
           <p>
-            I am a frontend developer specializing in React. 
-            I enjoy building clean, user-friendly web applications and improving user experience through simple and effective UI design.
+            I am a frontend developer specializing in React and modern JavaScript. 
+            I focus on building clean, responsive, and user-friendly web applications.
+            
+            I enjoy turning ideas into real products and continuously improving my skills through hands-on projects. 
+            I am passionate about writing maintainable code, learning new technologies, and growing as a professional developer.
           </p>
         </section>
 
