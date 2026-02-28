@@ -77,7 +77,7 @@ const handleNavClick = (
           }}
           className="border border-[#00c050] px-2 py-1 rounded-md  text-lg text-white"
         >
-          Sameul <span className="text-[#00ff88]">Islam</span>
+          Irene <span className="text-[#00ff88]">Tayler</span>
         </Link>
 
         {/* Desktop Menu */}

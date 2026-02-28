@@ -25,7 +25,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Hi, I’m <span className="text-[#008236]">Sameul</span>
+            Hi, I’m <span className="text-[#008236]">Irene Tayler</span>
           </motion.h1>
 
           <motion.p
@@ -50,8 +50,8 @@ const Hero = () => {
               Hire Me!
             </Link>
             <a
-              href="/Sameul_Islam_CV.pdf"
-              download="Sameul_Islam_CV.pdf"
+              href="/Irene_Tayler_CV.pdf"
+              download="Irene_Tayler_CV.pdf"
               className="px-6 py-3 border-2 border-[#008236] text-[#008236] rounded-lg font-medium hover:bg-[#008236] hover:text-white transition-colors duration-300 items-center flex"
             >
               Download CV <LuArrowDownToLine  size={24} className="hover:rotate-45" />
@@ -67,7 +67,7 @@ const Hero = () => {
   transition={{ duration: 0.8, delay: 1.2 }}
 >
   <a
-    href="https://github.com/sameul-islam"
+    href="https://github.com/IreneTayler/"
     target="_blank"
     className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white  transition-all duration-300 text-xl"
   >
@@ -75,7 +75,7 @@ const Hero = () => {
   </a>
 
   <a
-    href="https://www.linkedin.com/in/sameul-islam/"
+    href="https://www.linkedin.com/in/Irene-tayler/"
     target="_blank"
     className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white  transition-all duration-300 text-xl"
   >

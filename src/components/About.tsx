@@ -38,7 +38,7 @@ const About = () => {
 
               {/* Profile image */}
               <image
-                href="/profile2.png"
+                href="/profile1.png"
                 width="200"
                 height="260"
                 clipPath="url(#hexClipAbout)"
@@ -68,7 +68,7 @@ const About = () => {
           </h2>
 
           <p className="text-white text-md leading-relaxed">
-            Hi, I’m <span className="text-[#00ff88]/60">Sameul Islam</span>, a Front-End Web Developer creating high-performance, responsive, and visually appealing websites.
+            Hi, I’m <span className="text-[#00ff88]/60">Irene Tayler</span>, a Front-End Web Developer creating high-performance, responsive, and visually appealing websites.
           </p>
 
           <p className="text-white text-md leading-relaxed">

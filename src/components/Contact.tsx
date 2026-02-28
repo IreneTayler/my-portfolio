@@ -66,15 +66,15 @@ const ContactSection = () => {
           <div className="space-y-4 text-md">
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaPhone className="text-md" />
-              <span className="text-white">+880 1320-694376</span>
+              <span className="text-white">+7 981 098 1772</span>
             </div>
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaEnvelope className="text-md" />
-              <span className="text-white">sameulislam479@gmail.com</span>
+              <span className="text-white">Irene19tayler@outlook.com</span>
             </div>
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaMapMarkerAlt className="text-md" />
-              <span className="text-white">Dhaka, Bangladesh</span>
+              <span className="text-white">St. Petersburg, Russia</span>
             </div>
           </div>
         </motion.div>

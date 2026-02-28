@@ -71,7 +71,7 @@ const Footer = () => {
           transition={{ duration: 0.6 }}
           className="text-center md:text-left"
         >
-          <h2 className="lg:text-2xl text-xl font-semibold text-[#00ff88]/80">Sameul Islam</h2>
+          <h2 className="lg:text-2xl text-xl font-semibold text-[#00ff88]/80">Irene Tayler</h2>
           <p className="text-gray-300 text-sm">Front-End Developer & Designer</p>
         </motion.div>
 
@@ -83,14 +83,14 @@ const Footer = () => {
           className="flex justify-center space-x-4 mt-5 md:mt-0"
         >
           <a
-            href="https://github.com/sameul-islam"
+            href="https://github.com/IreneTayler/"
             target="_blank"
             className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
           >
             <FaGithub size={24}/>
           </a>
           <a
-            href="https://www.linkedin.com/in/sameul-islam/"
+            href="https://www.linkedin.com/in/Irene-tayler/"
             target="_blank"
             className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
           >
@@ -121,7 +121,7 @@ const Footer = () => {
         transition={{ duration: 1 }}
         className="text-center text-gray-400 text-sm mt-6 border-t border-[#00ff88]/20 pt-4"
       >
-        © {new Date().getFullYear()} Sameul Islam — All Rights Reserved.
+        © {new Date().getFullYear()} Irene Tayler — All Rights Reserved.
       </motion.div>
     </footer>
   );
