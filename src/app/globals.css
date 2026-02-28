@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&family=Roboto+Slab:wght@100..900&family=Sriracha&display=swap');
+
+@import "tailwindcss";
+
+
+html {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+  background-color: #1e1e2f; 
+  color: #ffffff; 
+}
+
+@theme {
+  --font-Roboto: "Roboto Slab", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 
+@layer utilities {
+ 
+  .text-gradient {
+    background: linear-gradient(90deg, #ff4c60, #f9b42d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #ff4c60;
+    border-radius: 3px;
+  }
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 40s linear infinite;
+}
+
+
+section {
+  padding: 6rem 2rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 8rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: 10rem 6rem;
+  }
+} */
+
+
+
+/* For Hero section */
+
+/* 
+.clip-hexagon {
+  clip-path: polygon(
+    25% 0%, 75% 0%, 
+    100% 50%, 75% 100%, 
+    25% 100%, 0% 50%
+  );
+  border-radius: 8px; 
+}
+
+
+.rounded-hexagon {
+  clip-path: polygon(
+    25% 0%, 75% 0%, 
+    100% 50%, 75% 100%, 
+    25% 100%, 0% 50%
+  );
+  transition: background-color 0.3s;
+}
+
+.group:hover .rounded-hexagon {
+  background-color: white;
+  border-color: white;
+} */
