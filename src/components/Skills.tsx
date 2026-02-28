@@ -6,12 +6,18 @@ const skills = [
   { name: "HTML5", level: 95 },
   { name: "CSS3", level: 90 },
   { name: "Tailwind CSS", level: 85 },
-  { name: "Figma", level: 60 },
-  { name: "Next.js", level: 85 },
-  { name: "TypeScript", level: 80 },
-  { name: "JavaScript", level: 90 },
   { name: "React.js", level: 90 },
-  { name: "Git & GitHub", level: 85 },
+  { name: "Next.js", level: 80 },
+  { name: "TypeScript", level: 80 },
+  { name: "PHP (Laravel, Symfony)", level: 80 },
+  { name: "Python (Django, Flask, FastAPI)", level: 80 },
+  { name: "Vue.js", level: 70 },
+  { name: "Node.js", level: 70 },
+  { name: "Angular", level: 70 },
+  { name: "Docker", level: 70 },
+  { name: "PostgreSQL", level: 70 },
+  { name: "MongoDB", level: 70 },
+  { name: "MySQL", level: 70 },
 ];
 
 const Skills = () => {

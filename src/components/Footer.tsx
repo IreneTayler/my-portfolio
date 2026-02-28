@@ -8,7 +8,7 @@
 //         {/* Left: Name & Role */}
 //         <div className="text-center md:text-left">
 //           <h1 className="text-lg font-bold text-[#00ff88]">Samuel Islam</h1>
-//           <p className="text-sm text-white/80">Front-end Developer & Designer</p>
+//           <p className="text-sm text-white/80">Full-Stack Developer</p>
 //         </div>
 
 //         {/* Center: Social Icons */}
@@ -72,7 +72,7 @@ const Footer = () => {
           className="text-center md:text-left"
         >
           <h2 className="lg:text-2xl text-xl font-semibold text-[#00ff88]/80">Irene Tayler</h2>
-          <p className="text-gray-300 text-sm">Front-End Developer & Designer</p>
+          <p className="text-gray-300 text-sm">Full-Stack Developer</p>
         </motion.div>
 
         {/* Middle: Social Icons */}

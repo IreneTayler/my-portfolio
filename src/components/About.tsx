@@ -68,28 +68,28 @@ const About = () => {
           </h2>
 
           <p className="text-white text-md leading-relaxed">
-            Hi, I’m <span className="text-[#00ff88]/60">Irene Tayler</span>, a Front-End Web Developer creating high-performance, responsive, and visually appealing websites.
+            Hi, I’m a <span className="text-[#00ff88]/60">Full-Stack Developer</span> with a passion for building high-performance, scalable web applications.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            I am skilled in <span className="text-[#00ff88]/60">HTML5, CSS3, Tailwind CSS, Figma, Next.js, TypeScript, JavaScript, React.js, Git & GitHub</span> and bring designs to life with pixel-perfect precision.
+            With expertise in <span className="text-[#00ff88]/60"> React, TypeScript, Laravel   </span> and <span className="text-[#00ff88]/60"> FastAPI </span>,  I create solutions that are both efficient and user-friendly.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            I focus on professional websites with complex logic and optimized performance, crafting interactive user experiences with seamless mobile responsiveness.
+             I’m experienced in frontend technologies like <span className="text-[#00ff88]/60"> React </span> and <span className="text-[#00ff88]/60"> Vue 3 </span>,  backend development with  <span className="text-[#00ff88]/60"> Laravel </span> and <span className="text-[#00ff88]/60"> FastAPI </span>, and have a strong understanding of database systems like  <span className="text-[#00ff88]/60"> MySQL </span> and  <span className="text-[#00ff88]/60"> PostgreSQL </span>.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            I particularly enjoy developing e-commerce platforms, combining design, functionality, and performance to deliver top-notch digital experiences.
+            I’ve worked on projects that involve real-time communication systems using WebRTC, API integrations, and e-commerce platforms, always ensuring code quality, performance optimization, and smooth user experiences. 
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            Always striving for excellence, I leverage modern technologies to produce websites that are not only beautiful but also fast, efficient, and reliable.
+            Additionally, I’m well-versed in DevOps practices like containerization using Docker, and I utilize tools like Figma and Git to collaborate effectively in a team setting.
           </p>
-            
-            <p className="text-white text-md leading-relaxed flex flex-wrap items-center gap-2">
-              <FaUserGraduate className="text-[#00ff88]/60 text-md"/> Currently pursuing a <span className="text-[#00ff88]/60">Bachelor of Arts (B.A.)</span> degree.
-            </p>
+
+          <p className="text-white text-md leading-relaxed">
+            My goal is to turn your ideas into functional applications that solve real-world problems and deliver lasting value. I’m always eager to learn and embrace new technologies to stay at the forefront of development.
+          </p>
 
         </motion.div>
       </div>

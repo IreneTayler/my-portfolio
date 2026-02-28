@@ -34,7 +34,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            Front-End Developer & Designer
+            Full-Stack Developer
           </motion.p>
 
           <motion.div
@@ -60,7 +60,7 @@ const Hero = () => {
 
           {/* Social Icons */}
               {/* Social Icons */}
-<motion.div
+{/* <motion.div
   className="flex justify-center md:justify-start space-x-4 mt-6"
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -97,7 +97,7 @@ const Hero = () => {
   >
     <FaFacebook />
   </a>
-</motion.div>
+</motion.div> */}
 
 
 
