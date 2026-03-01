@@ -34,27 +34,6 @@ const projects: Project[] = [
     liveLink: "https://rolax-resort-beige.vercel.app/",
     githubLink: "https://github.com/IreneTayler/",
   },
-  {
-    title: "E-commerce 2",
-    description: "Modern, high-performance online store built for speed, style, and seamless user experience.",
-    image: "/luxecart.png",
-    liveLink: "https://luxecart-gilt.vercel.app/",
-    githubLink: "https://github.com/IreneTayler/",
-  },
-    {
-    title: "Landing Page 2",
-    description: "Minimal, responsive landing page crafted for powerful product presentation and brand impact.",
-    image: "/fizz.png",
-    liveLink: "https://drinkings-fizz.netlify.app/",
-    githubLink: "https://github.com/IreneTayler/",
-  },
-  {
-    title: "Hotel Booking 2",
-    description: "Fully responsive hotel booking website with elegant UI, smooth interactions, and professional front-end architecture.",
-    image: "/rolax-resort.png",
-    liveLink: "https://rolax-resort-beige.vercel.app/",
-    githubLink: "https://github.com/IreneTayler/",
-  },
 ];
 
 const ProjectsSection = () => {
@@ -83,7 +62,7 @@ const ProjectsSection = () => {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            className="relative group rounded-xl overflow-hidden border border-[#00ff88] shadow-lg cursor-pointer"
+            className="relative group rounded-xl overflow-hidden shadow-lg cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -105,14 +84,14 @@ const ProjectsSection = () => {
                 <Link
                   href={project.liveLink}
                   target="_blank"
-                  className="px-4 py-2 text-white border border-[#00ff88] font-medium rounded-lg hover:bg-[#00c950] transition-colors duration-300 hover:shadow-[0_0_10px_#00ff88]"
+                  className="px-4 py-2 text-white font-medium rounded-lg hover:bg-[#00c950] transition-colors duration-300 hover:shadow-[0_0_10px_#00ff88]"
                 >
                   Live
                 </Link>
                 <Link
                   href={project.githubLink}
                   target="_blank"
-                  className="px-4 py-2 border border-[#00ff88] text-[#00ff88] rounded-lg hover:bg-[#00ff88] hover:text-black transition-colors duration-300 shadow-[0_0_10px_#00ff88]"
+                  className="px-4 py-2 text-[#00ff88] rounded-lg hover:bg-[#00ff88] hover:text-black transition-colors duration-300 shadow-[0_0_10px_#00ff88]"
                 >
                   GitHub
                 </Link>
