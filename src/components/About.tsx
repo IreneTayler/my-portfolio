@@ -23,36 +23,23 @@ const About = () => {
             whileInView={{ y: [-12, 10, -12] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
-            <svg viewBox="0 0 200 260" className="w-full h-full">
-              <defs>
-                <clipPath id="hexClipAbout">
-                  <polygon points="100,10 190,55 190,205 100,250 10,205 10,55" />
-                </clipPath>
-              </defs>
 
-              {/* Glassy light green background */}
-              <polygon
-                points="100,10 190,55 190,205 100,250 10,205 10,55"
-                fill="rgba(0, 255, 136, 0.15)"
-              />
+          <div className="flex justify-between items-center w-100 bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300">
+            <div className="p-6 rounded-lg shadow-lg w-1/3 w-100" >
+              <p className="text-[#00ff88]/60 border-b">
+                Experience & Focus
+              </p>
 
-              {/* Profile image */}
-              <image
-                href="/profile1.png"
-                width="200"
-                height="260"
-                clipPath="url(#hexClipAbout)"
-                preserveAspectRatio="xMidYMid slice"
-              />
+              <p>Bachelor of Engineering in Software Engineering</p>
 
-              {/* Border */}
-              <polygon
-                points="100,10 190,55 190,205 100,250 10,205 10,55"
-                fill="none"
-                stroke="#00a63e"
-                strokeWidth="2"
-              />
-            </svg>
+              <p className="h-5"></p>
+
+              <p>I’m a Full-Stack Developer driven by a passion for creating meaningful, high-quality web applications that solve real-world problems. Whether building real-time communication systems or designing seamless user experiences, I thrive on turning complex challenges into simple, scalable solutions. I’m always eager to learn, adapt, and innovate, ensuring that every project I work on not only meets but exceeds expectations.</p>
+            
+            </div>
+
+            </div>
+
           </motion.div>
         </motion.div>
 

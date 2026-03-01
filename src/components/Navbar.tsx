@@ -9,7 +9,7 @@ const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
-  const menuItems = ["Home", "About", "Services", "Projects", "Contact"];
+  const menuItems = ["Home", "About", "Experience", "Projects", "Contact"];
 
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
 import ProjectsSection from '@/components/Projects'
-import ServicesSection from '@/components/Services'
+import ExperienceSection from '@/components/Experience'
 import Skills from '@/components/Skills'
 import React from 'react'
 
@@ -15,7 +15,7 @@ const page = () => {
       <Hero/>
       <About/>
       <Skills/>
-      <ServicesSection/>
+      <ExperienceSection/>
       <ProjectsSection/>
       <ContactSection/>
       <Footer/>

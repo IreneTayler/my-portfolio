@@ -13,11 +13,11 @@ const skills = [
   { name: "Python (Django, Flask, FastAPI)", level: 80 },
   { name: "Vue.js", level: 70 },
   { name: "Node.js", level: 70 },
-  { name: "Angular", level: 70 },
+  { name: "Angular", level: 60 },
   { name: "Docker", level: 70 },
   { name: "PostgreSQL", level: 70 },
-  { name: "MongoDB", level: 70 },
-  { name: "MySQL", level: 70 },
+  { name: "MongoDB", level: 60 },
+  { name: "MySQL", level: 80 },
 ];
 
 const Skills = () => {
@@ -26,7 +26,7 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <motion.h2
-          className="text-2xl font-bold text-center text-[#00ff88] mb-12 border-b pb-2"
+          className="text-4xl font-bold text-center text-[#00ff88] mb-12 border-b pb-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
