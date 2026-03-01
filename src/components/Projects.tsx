@@ -9,30 +9,26 @@ interface Project {
   description: string;
   image: string;
   liveLink: string;
-  githubLink: string;
 }
 
 const projects: Project[] = [
    {
-    title: "E-commerce 1",
-    description: "Modern, high-performance online store built for speed, style, and seamless user experience.",
-    image: "/luxecart.png",
-    liveLink: "https://luxecart-gilt.vercel.app/",
-    githubLink: "https://github.com/IreneTayler/",
+    title: "",
+    description: "At Kindertales, our tailored childcare management software allows you to manage operations, staff, devices, and your bottom-line all in one place!",
+    image: "/Screenshot 2026-03-01 034650.png",
+    liveLink: "https://www.kindertales.com/",
   },
   {
-    title: "Landing Page 1",
+    title: "",
     description: "Minimal, responsive landing page crafted for powerful product presentation and brand impact.",
-    image: "/fizz.png",
-    liveLink: "https://drinkings-fizz.netlify.app/",
-    githubLink: "https://github.com/IreneTayler/",
+    image: "/Screenshot 2026-03-01 034926.png",
+    liveLink: "http://myaiwiz.com/",
   },
   {
-    title: "Hotel Booking 1",
-    description: "Fully responsive hotel booking website with elegant UI, smooth interactions, and professional front-end architecture.",
-    image: "/rolax-resort.png",
-    liveLink: "https://rolax-resort-beige.vercel.app/",
-    githubLink: "https://github.com/IreneTayler/",
+    title: "",
+    description: "YOUR 3D CAPTURE OF REALITY.",
+    image: "/Screenshot 2026-03-01 034724.png",
+    liveLink: "https://construkted.com/",
   },
 ];
 
@@ -87,13 +83,6 @@ const ProjectsSection = () => {
                   className="px-4 py-2 text-white font-medium rounded-lg hover:bg-[#00c950] transition-colors duration-300 hover:shadow-[0_0_10px_#00ff88]"
                 >
                   Live
-                </Link>
-                <Link
-                  href={project.githubLink}
-                  target="_blank"
-                  className="px-4 py-2 text-[#00ff88] rounded-lg hover:bg-[#00ff88] hover:text-black transition-colors duration-300 shadow-[0_0_10px_#00ff88]"
-                >
-                  GitHub
                 </Link>
               </div>
             </div>

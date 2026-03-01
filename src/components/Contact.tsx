@@ -11,33 +11,84 @@ const ContactSection = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setStatus({ message: "Please enter a valid email address.", type: "error" });
+  
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   if (!emailRegex.test(formData.email)) {
+  //     setStatus({ message: "Please enter a valid email address.", type: "error" });
+  //     return;
+  //   }
+  //   setStatus({ message: "Sending...", type: null });
+
+  //   try {
+  //     const res = await fetch("/api/send", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     const data = await res.json();
+  //     console.log("formData", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+  //     if (data.success) {
+  //       setStatus({ message: "Message sent successfully!", type: "success" });
+  //       setFormData({ name: "", email: "", message: "" });
+  //     } else {
+  //       setStatus({ message: "Failed to send message.", type: "error" });
+  //     }
+  //   } catch (error) {
+  //     setStatus({ message: "Something went wrong!", type: "error" });
+  //   }
+  // };
+
+  const [errors, setErrors] = useState<any>({});
+
+  const validate = () => {
+    const newErrors: any = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
+    ) {
+      newErrors.email = "Invalid email format";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = () => {
+    const validationErrors = validate();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
       return;
     }
-    setStatus({ message: "Sending...", type: null });
 
-    try {
-      const res = await fetch("/api/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus({ message: "Message sent successfully!", type: "success" });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus({ message: "Failed to send message.", type: "error" });
-      }
-    } catch (error) {
-      setStatus({ message: "Something went wrong!", type: "error" });
-    }
+    const mailtoLink = `mailto:Irene19tayler@outlook.com?subject=${encodeURIComponent(
+      "hire"
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    )}`;
+
+    // window.open(mailtoLink)
+    window.location.href = mailtoLink;
   };
+
+
 
   return (
     <section
@@ -87,7 +138,7 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5">
             <input
               name="name"
               type="text"
@@ -117,11 +168,12 @@ const ContactSection = () => {
             />
             <button
               type="submit"
+              onClick={handleSubmit}
               className="mt-2 px-6 py-3 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00c950] hover:shadow-[0_0_15px_#00ff88] transition-all duration-300 text-md"
             >
               Send Message
             </button>
-          </form>
+          </div>
 
           {status.message && (
             <p
@@ -139,3 +191,5 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+
