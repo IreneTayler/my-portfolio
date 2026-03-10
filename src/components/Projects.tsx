@@ -26,7 +26,7 @@ const projects: Project[] = [
   },
   {
     title: "",
-    description: "YOUR 3D CAPTURE OF REALITY.",
+    description: "This platform allows users to upload, manage, and explore large 3D photogrammetry models and point clouds. It is designed for showcasing architectural scans, historical sites, and large-scale 3D assets. Users can browse projects, explore locations, and interact with 3D content through the web interface.",
     image: "/Screenshot 2026-03-01 034724.png",
     liveLink: "https://construkted.com/",
   },
