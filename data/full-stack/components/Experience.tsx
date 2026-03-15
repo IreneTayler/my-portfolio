@@ -76,15 +76,14 @@ const ExperienceSection = () => {
                 <h3 className="text-2xl font-semibold text-green-500 mb-4">
                   Full-Stack Web Developer
                 </h3>
-                <p className="text-lg text-gray-300 mb-4">Freelance / Web Development (2024 — Present)</p>
+                <p className="text-lg text-gray-300 mb-4">Freelance / Full-stack (2024 — Present)</p>
                 <ul className="list-disc pl-5 text-gray-300">
-                  <li>Develop responsive websites and landing pages using HTML5, CSS3, JavaScript, and Vue.js.</li>
-                  <li>Convert Figma designs into pixel-perfect responsive layouts.</li>
-                  <li>Build and customize websites using WordPress and PHP.</li>
-                  <li>Integrate external services such as Telegram bots, CRM systems, and REST APIs.</li>
-                  <li>Optimize website performance and improve loading speed.</li>
-                  <li>Manage project repositories using Git and GitLab.</li>
-                  <li>Use AI tools (ChatGPT, GitHub Copilot) to speed up development and automate routine tasks.</li>
+                  <li>Provide comprehensive web solutions for international clients across various industries.</li>
+                  <li>Design and develop scalable web applications using React, Node.js, and Laravel.</li>
+                  <li>Implement secure authentication systems and third-party API integration, including payment services.</li>
+                  <li>Build and maintain e-commerce platforms, handling product, order, and inventory management.</li>
+                  <li>Lead development at all stages, from project planning to production deployment.</li>
+                  <li>Provide ongoing optimization, debugging, and technical support to ensure stable application operation.</li>
                 </ul>
               </div>
             </div>
@@ -94,18 +93,24 @@ const ExperienceSection = () => {
           <div className="relative flex justify-end items-center mb-16">
             <div className="w-1/2 pl-10 pr-4 text-left">
               <div className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300 p-6 rounded-lg shadow-lg">
-                <p className="text-lg text-gray-300 mb-4">Frontend & Web Developer (2021 — 2024)</p>
+                <p className="text-lg text-gray-300 mb-4">Personal & Client Projects (2021 — 2023)</p>
                 <h3 className="text-2xl font-semibold text-blue-400 mb-4">
                   Frontend Developer
                 </h3>
                 <ul className="list-disc pl-5 text-gray-300">
-                  <li>Developed responsive websites using HTML, CSS, JavaScript, and Vue.js.</li>
-                  <li>Implemented UI components and interactive features for landing pages and business websites.</li>
-                  <li>Integrated backend APIs and worked with MySQL databases.</li>
-                  <li>Assisted in backend development using PHP and Node.js.</li>
-                  <li>Optimized website performance and improved cross-browser compatibility.</li>
+                  <li>Developed responsive websites and web applications using HTML5, CSS3, JavaScript, and Vue.js.</li>
+                  <li>Collaborated with designers to implement UI/UX improvements for online campaigns and landing pages.</li>
+                  <li>Optimized website performance and ensured cross-browser compatibility.</li>
                 </ul>
 
+                 <h3 className="text-2xl font-semibold text-blue-400 mb-4">
+                  Backend and Full-Stack Development
+                </h3>
+                <ul className="list-disc pl-5 text-gray-300">
+                  <li>Assisted in developing backend functionality using Node.js and PHP.</li>
+                  <li>Integrated APIs for content management and e-commerce functions.</li>
+                  <li>Managed MySQL databases to store user data, campaign metrics, and product information.</li>
+                </ul>
               </div>
             </div>
           </div>

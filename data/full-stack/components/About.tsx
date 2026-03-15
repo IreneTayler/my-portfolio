@@ -55,27 +55,27 @@ const About = () => {
           </h2>
 
           <p className="text-white text-md leading-relaxed">
-            Hi, I’m a <span className="text-[#00ff88]/60"> Web Developer</span> with experience building modern, responsive websites and web applications.
+            Hi, I’m a <span className="text-[#00ff88]/60">Full-Stack Developer</span> with a passion for building high-performance, scalable web applications.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-           I specialize in  <span className="text-[#00ff88]/60">  frontend development, website layout from Figma,   </span> and <span className="text-[#00ff88]/60"> CMS-based solutions such as WordPress </span>.
+            With expertise in <span className="text-[#00ff88]/60"> React, TypeScript, Laravel   </span> and <span className="text-[#00ff88]/60"> FastAPI </span>,  I create solutions that are both efficient and user-friendly.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-             My focus is on creating fast, clean, and user-friendly interfaces that work perfectly on both desktop and mobile devices.
+             I’m experienced in frontend technologies like <span className="text-[#00ff88]/60"> React </span> and <span className="text-[#00ff88]/60"> Vue 3 </span>,  backend development with  <span className="text-[#00ff88]/60"> Laravel </span> and <span className="text-[#00ff88]/60"> FastAPI </span>, and have a strong understanding of database systems like  <span className="text-[#00ff88]/60"> MySQL </span> and  <span className="text-[#00ff88]/60"> PostgreSQL </span>.
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            I have experience working with <span className="text-[#00ff88]/60"> HTML5, CSS3, JavaScript, PHP, MySQL </span> and <span className="text-[#00ff88]/60"> Git </span> and I regularly collaborate with designers and backend developers to deliver complete web solutions.
+            I’ve worked on projects that involve real-time communication systems using WebRTC, API integrations, and e-commerce platforms, always ensuring code quality, performance optimization, and smooth user experiences. 
           </p>
 
           <p className="text-white text-md leading-relaxed">
-            I also use <span className="text-[#00ff88]/60"> AI tools such as ChatGPT and GitHub Copilot </span> to speed up development, generate code, and automate routine tasks, allowing me to focus on building high-quality products.
+            Additionally, I’m well-versed in DevOps practices like containerization using Docker, and I utilize tools like Figma and Git to collaborate effectively in a team setting.
           </p>
-          
+
           <p className="text-white text-md leading-relaxed">
-            My goal is to create efficient, well-structured websites that solve real business problems and provide excellent user experience.
+            My goal is to turn your ideas into functional applications that solve real-world problems and deliver lasting value. I’m always eager to learn and embrace new technologies to stay at the forefront of development.
           </p>
 
         </motion.div>
