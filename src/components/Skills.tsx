@@ -2,22 +2,29 @@
 
 import { motion } from "framer-motion";
 
-const skills = [
+const CoreSkills = [
   { name: "HTML5", level: 95 },
   { name: "CSS3", level: 90 },
   { name: "Tailwind CSS", level: 85 },
+  { name: "JavaScript", level: 95 },
+  { name: "TypeScript", level: 90 },
+  { name: "Vue.js", level: 85 },
   { name: "React.js", level: 90 },
-  { name: "Next.js", level: 80 },
-  { name: "TypeScript", level: 80 },
-  { name: "PHP (Laravel, Symfony)", level: 80 },
-  { name: "Python (Django, Flask, FastAPI)", level: 80 },
-  { name: "Vue.js", level: 70 },
-  { name: "Node.js", level: 70 },
-  { name: "Angular", level: 60 },
-  { name: "Docker", level: 70 },
-  { name: "PostgreSQL", level: 70 },
-  { name: "MongoDB", level: 60 },
+  { name: "PHP", level: 80 },
   { name: "MySQL", level: 80 },
+  { name: "WordPress", level: 80 },
+  { name: "Git / GitLab", level: 80 },
+  { name: "Docker (basic)", level: 85 },
+];
+
+
+const skills = [
+  { name: "REST API", level: 75 },
+  { name: "Python (Django, Flask, FastAPI)", level: 75 },
+  { name: "Responsive Design", level: 70 },
+  { name: "Figma to HTML", level: 75 },
+  { name: "Website Performance Optimization", level: 70 },
+  { name: "AI tools for development (ChatGPT, GitHub)", level: 80 },
 ];
 
 const Skills = () => {
@@ -32,7 +39,48 @@ const Skills = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          My Skills
+          Core Skills
+        </motion.h2>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {CoreSkills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-md font-semibold text-[#00ff88]">{skill.name}</h3>
+              
+              {/* Skill Bar */}
+              <div className="w-full h-1.5 bg-[#45556c] rounded-full overflow-hidden">
+                <motion.div
+                  className="h-1.5 bg-[#00ff88] rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${skill.level}%` }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  viewport={{ once: true }}
+                />
+              </div>
+
+              <span className="mt-2 text-sm text-gray-300">{skill.level}%</span>
+            </motion.div>
+          ))}
+        </div>
+
+
+         {/* Title */}
+        <motion.h2
+          className="text-4xl font-bold text-center text-[#00ff88] mb-12 border-b pb-2 mt-25"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          Additional Skills
         </motion.h2>
 
         {/* Skills Grid */}
