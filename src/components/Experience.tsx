@@ -94,7 +94,7 @@ const ExperienceSection = () => {
           <div className="relative flex justify-end items-center mb-16">
             <div className="w-1/2 pl-10 pr-4 text-left">
               <div className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300 p-6 rounded-lg shadow-lg">
-                <p className="text-lg text-gray-300 mb-4">Frontend & Web Developer (2021 — 2024)</p>
+                <p className="text-lg text-gray-300 mb-4">Frontend & Web Developer (2019 — 2024)</p>
                 <h3 className="text-2xl font-semibold text-blue-400 mb-4">
                   Frontend Developer
                 </h3>
