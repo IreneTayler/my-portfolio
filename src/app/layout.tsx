@@ -44,6 +44,7 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import CustomCursor from "@/components/CustomCursor";
 import GlobalParticles from "@/components/GlobalParticles";
+import HashScrollRestore from "@/components/HashScrollRestore";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GlobalParticles />
 
         <CustomCursor />
+        <HashScrollRestore />
 
         {children}
 
