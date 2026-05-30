@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 
+const menuItems = ["Home", "About", "Skills", "Experience", "Projects", "AI", "Contact"];
+
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-
-  const menuItems = ["Home", "About", "Experience", "Projects", "Contact"];
 
 
   useEffect(() => {

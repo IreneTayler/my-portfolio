@@ -1,8 +1,6 @@
 "use client"; 
 
 import React, { useState, useEffect } from "react";
-import { FaArrowUp } from "react-icons/fa";
-import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 import { TbArrowDownFromArc } from "react-icons/tb";
 
 const ScrollToTop: React.FC = () => {

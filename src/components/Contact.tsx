@@ -5,51 +5,27 @@ import { motion } from "framer-motion";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<{ message: string; type: "success" | "error" | null }>({ message: "", type: null });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<{
+    message: string;
+    type: "success" | "error" | "info" | null;
+  }>({ message: "", type: null });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  
-
-  
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (!emailRegex.test(formData.email)) {
-  //     setStatus({ message: "Please enter a valid email address.", type: "error" });
-  //     return;
-  //   }
-  //   setStatus({ message: "Sending...", type: null });
-
-  //   try {
-  //     const res = await fetch("/api/send", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(formData),
-  //     });
-  //     const data = await res.json();
-  //     console.log("formData", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(formData),
-  //     });
-  //     if (data.success) {
-  //       setStatus({ message: "Message sent successfully!", type: "success" });
-  //       setFormData({ name: "", email: "", message: "" });
-  //     } else {
-  //       setStatus({ message: "Failed to send message.", type: "error" });
-  //     }
-  //   } catch (error) {
-  //     setStatus({ message: "Something went wrong!", type: "error" });
-  //   }
-  // };
-
-  const [errors, setErrors] = useState<any>({});
 
   const validate = () => {
-    const newErrors: any = {};
+    const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
@@ -57,10 +33,14 @@ const ContactSection = () => {
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
-    } else if (
-      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)
-    ) {
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
       newErrors.email = "Invalid email format";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone is required";
+    } else if (!/^\+?[0-9\s\-()]{7,20}$/.test(formData.phone)) {
+      newErrors.phone = "Invalid phone format";
     }
 
     if (!formData.message.trim()) {
@@ -70,33 +50,50 @@ const ContactSection = () => {
     return newErrors;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length > 0) {
+      setStatus({ message: "Please fix the highlighted fields.", type: "error" });
       return;
     }
 
-    const mailtoLink = `mailto:Irene19tayler@outlook.com?subject=${encodeURIComponent(
-      "hire"
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )}`;
+    setIsSubmitting(true);
+    setStatus({ message: "Sending message...", type: "info" });
 
-    // window.open(mailtoLink)
-    window.location.href = mailtoLink;
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus({ message: "Message sent successfully. A copy was emailed to you.", type: "success" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setErrors({});
+      } else {
+        setStatus({ message: data.message || "Failed to send message.", type: "error" });
+      }
+    } catch {
+      setStatus({ message: "Server error. Please try again later.", type: "error" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-
+  const fieldClass = (field: string) =>
+    `p-4 rounded-lg border ${errors[field] ? "border-red-500" : "border-gray-700"} bg-black/40 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ff88] focus:shadow-[0_0_12px_#00ff88] text-md`;
 
   return (
     <section
       id="contact"
-      className="relative z-10 w-full py-20 px-6 md:px-12 bg-black/20  text-white overflow-hidden"
-      style={{
-        scrollMarginTop: "80px", 
-      }}
+      className="relative z-10 w-full py-20 px-6 md:px-12 bg-black/20 text-white overflow-hidden"
+      style={{ scrollMarginTop: "80px" }}
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
         {/* Left: Contact Info */}
@@ -104,14 +101,14 @@ const ContactSection = () => {
           className="flex-1 space-y-6 will-change-auto"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.2 }} 
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h2 className="text-2xl font-bold text-[#00ff88]/50 border-b border-[#00ff88] pb-2 inline-block">
             Contact Me
           </h2>
           <p className="text-gray-100 text-md">
-            Feel free to reach out for collaborations, projects, or freelance work.
+            Reach out for projects, collaborations, or freelance work.
           </p>
 
           <div className="space-y-4 text-md">
@@ -138,48 +135,71 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="flex flex-col gap-5">
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
             <input
               name="name"
               type="text"
               placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
-              required
-              className="p-4 rounded-lg border border-gray-700 bg-black/40 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ff88] focus:shadow-[0_0_12px_#00ff88] text-md"
+              className={fieldClass("name")}
+              aria-invalid={Boolean(errors.name)}
             />
+            {errors.name && <p className="text-sm text-red-500">{errors.name}</p>}
+
             <input
               name="email"
               type="email"
               placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
-              required
-              className="p-4 rounded-lg border border-gray-700 bg-black/40 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ff88] focus:shadow-[0_0_12px_#00ff88] text-md"
+              className={fieldClass("email")}
+              aria-invalid={Boolean(errors.email)}
             />
+            {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
+
+            <input
+              name="phone"
+              type="tel"
+              placeholder="Your Phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className={fieldClass("phone")}
+              aria-invalid={Boolean(errors.phone)}
+            />
+            {errors.phone && <p className="text-sm text-red-500">{errors.phone}</p>}
+
             <textarea
               name="message"
               placeholder="Your Message"
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              required
-              className="p-4 rounded-lg border border-gray-700 bg-black/40 text-white placeholder-gray-400 focus:outline-none focus:border-[#00ff88] focus:shadow-[0_0_12px_#00ff88] text-md"
+              className={fieldClass("message")}
+              aria-invalid={Boolean(errors.message)}
             />
+            {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
+
             <button
               type="submit"
-              onClick={handleSubmit}
-              className="mt-2 px-6 py-3 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00c950] hover:shadow-[0_0_15px_#00ff88] transition-all duration-300 text-md"
+              disabled={isSubmitting}
+              className="mt-2 px-6 py-3 bg-[#00ff88] text-black font-semibold rounded-lg hover:bg-[#00c950] hover:shadow-[0_0_15px_#00ff88] transition-all duration-300 text-md disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Send Message
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
-          </div>
+          </form>
 
           {status.message && (
             <p
               className={`mt-5 text-center text-md font-medium ${
-                status.type === "error" ? "text-red-500" : "text-[#00ff88]"
+                status.type === "error"
+                  ? "text-red-500"
+                  : status.type === "success"
+                  ? "text-[#00ff88]"
+                  : "text-gray-300"
               }`}
+              role="status"
+              aria-live="polite"
             >
               {status.message}
             </p>

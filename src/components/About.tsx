@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaUserGraduate } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -24,8 +23,8 @@ const About = () => {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
 
-          <div className="flex justify-between items-center w-100 bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300">
-            <div className="p-6 rounded-lg shadow-lg w-1/3 w-100" >
+          <div className="flex flex-col items-center justify-center w-full bg-black/30 rounded-lg p-5 transition-transform duration-300">
+            <div className="p-6 rounded-lg shadow-lg w-full">
               <p className="text-[#00ff88]/60 border-b">
                 Experience & Focus
               </p>
@@ -35,10 +34,8 @@ const About = () => {
               <p className="h-5"></p>
 
               <p>I’m a Full-Stack Developer driven by a passion for creating meaningful, high-quality web applications that solve real-world problems. Whether building real-time communication systems or designing seamless user experiences, I thrive on turning complex challenges into simple, scalable solutions. I’m always eager to learn, adapt, and innovate, ensuring that every project I work on not only meets but exceeds expectations.</p>
-            
             </div>
-
-            </div>
+          </div>
 
           </motion.div>
         </motion.div>

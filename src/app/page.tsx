@@ -1,4 +1,5 @@
 import About from '@/components/About'
+import AIHelper from '@/components/AIHelper'
 import ContactSection from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
@@ -17,6 +18,7 @@ const page = () => {
       <Skills/>
       <ExperienceSection/>
       <ProjectsSection/>
+      <AIHelper/>
       <ContactSection/>
       <Footer/>
     </div>

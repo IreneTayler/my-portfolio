@@ -47,7 +47,7 @@ const Skills = () => {
           {CoreSkills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300"
+              className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center transition-transform duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -88,7 +88,7 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
-              className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center  transition-transform duration-300"
+              className="bg-black/30 rounded-lg p-5 flex flex-col items-center justify-center transition-transform duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}

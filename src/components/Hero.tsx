@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
-import GlobalParticles from "./GlobalParticles";
 import { LuArrowDownToLine } from "react-icons/lu";
 
 const Hero = () => {
@@ -12,9 +11,6 @@ const Hero = () => {
       id="home"
       className="relative w-full h-[900px] md:h-[1000px] flex items-center justify-center overflow-hidden"
     >
-      {/* Particles */}
-      <GlobalParticles />
-
       <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-4 md:px-12 relative z-10">
         
         {/* Left Text & Buttons */}
@@ -59,48 +55,48 @@ const Hero = () => {
           </motion.div>
 
           {/* Social Icons */}
-              {/* Social Icons */}
-{/* <motion.div
-  className="flex justify-center md:justify-start space-x-4 mt-6"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 1.2 }}
->
-  <a
-    href="https://github.com/IreneTayler/"
-    target="_blank"
-    className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white  transition-all duration-300 text-xl"
-  >
-    <FaGithub />
-  </a>
+          <motion.div
+            className="flex justify-center md:justify-start space-x-4 mt-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
+            <a
+              href="https://github.com/IreneTayler/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+            >
+              <FaGithub />
+            </a>
 
-  <a
-    href="https://www.linkedin.com/in/Irene-tayler/"
-    target="_blank"
-    className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white  transition-all duration-300 text-xl"
-  >
-    <FaLinkedin />
-  </a>
+            <a
+              href="https://www.linkedin.com/in/Irene-tayler/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+            >
+              <FaLinkedin />
+            </a>
 
-  <a
-    href="https://wa.me/8801320694376"
-    target="_blank"
-    className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white  transition-all duration-300 text-xl"
-  >
-    <FaWhatsapp />
-  </a>
+            <a
+              href="https://wa.me/8801320694376"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+            >
+              <FaWhatsapp />
+            </a>
 
-  <a
-    href="https://www.facebook.com/share/1EvVk8tm8E/"
-    target="_blank"
-    className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
-  >
-    <FaFacebook />
-  </a>
-</motion.div> */}
-
-
-
+            <a
+              href="https://www.facebook.com/share/1EvVk8tm8E/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 border-2 border-[#008236] rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+            >
+              <FaFacebook />
+            </a>
+          </motion.div>
         </div>
 
         {/* Right Image with Hexagonal Border */}
