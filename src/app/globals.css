@@ -7,9 +7,27 @@
 html {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; 
-  background-color: #1e1e2f; 
-  color: #ffffff; 
+  scroll-padding-top: 80px;
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
+/* Custom scrollbar to match dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc6a;
 }
 
 @theme {
