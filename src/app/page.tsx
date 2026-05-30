@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import ProjectsSection from '@/components/Projects'
 import ExperienceSection from '@/components/Experience'
 import Skills from '@/components/Skills'
+import WorkApproach from '@/components/WorkApproach'
 import React from 'react'
 
 const page = () => {
@@ -15,6 +16,7 @@ const page = () => {
       <Navbar/>
       <Hero/>
       <About/>
+      <WorkApproach/>
       <Skills/>
       <ExperienceSection/>
       <ProjectsSection/>

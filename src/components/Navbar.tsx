@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const menuItems = ["Home", "About", "Skills", "Experience", "Projects", "AI", "Contact"];
+const menuItems = ["Home", "About", "Approach", "Skills", "Experience", "Projects", "AI", "Contact"];
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);

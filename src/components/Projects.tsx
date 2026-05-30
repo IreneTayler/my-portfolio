@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "Kindertales",
     description:
-      "Kindertales is a childcare management platform designed to help daycare centers manage operations, communication, and administrative processes through a unified web system. In this project, I recreated the landing page using React, TypeScript, and Tailwind CSS, applying a component-based architecture and responsive design.",
+      "A childcare management platform for daycare centers. I was responsible for recreating the entire landing page from scratch based on the existing design. I chose React + TypeScript + Tailwind CSS, built a component-based architecture with reusable UI elements, and ensured full responsiveness across mobile, tablet, and desktop. I also implemented scroll animations and optimized image loading for performance.",
     image: "/Kindertales1.png",
     image2: "/Kindertales2.png",
     image3: "/Kindertales3.png",
@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: "MyAIWiz",
     description:
-      "MyAIWiz is an AI-powered SaaS platform that automates the extraction and processing of tax documents for accounting workflows. The landing page was implemented using React, TypeScript, and Tailwind CSS with a focus on clean UI and reusable components.",
+      "An AI-powered SaaS platform for automated tax document processing. I personally implemented the marketing landing page, translating Figma designs into pixel-perfect React components. I handled form validation, responsive breakpoints, and component reuse patterns that reduced code duplication by roughly 30%. The page was built with accessibility in mind (ARIA labels, keyboard navigation).",
     image: "/MyAIWiz1.png",
     image2: "/MyAIWiz2.png",
     image3: "/MyAIWiz3.png",
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     title: "Construkted",
     description:
-      "This platform allows users to upload and explore large 3D photogrammetry models and point clouds. It is designed for showcasing architectural scans, historical sites, and large-scale 3D assets directly in the browser.",
+      "A 3D photogrammetry platform for architectural visualization. I contributed to the frontend UI that handles model uploads, viewer controls, and user dashboards. I worked on responsive layouts for the control panels, integrated REST API endpoints for model metadata, and collaborated with the 3D team to ensure UI performance did not degrade WebGL rendering.",
     image: "/Construkted1.png",
     image2: "/Construkted2.png",
     image3: "/Construkted3.png",
