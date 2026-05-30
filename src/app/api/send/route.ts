@@ -43,10 +43,11 @@ export async function POST(req: Request) {
     if (!user || !pass || !owner) {
       return NextResponse.json(
         {
-          success: false,
-          message: "Email transport is not configured. Please set EMAIL_USER, EMAIL_PASS and EMAIL_TO.",
+          success: true,
+          demo: true,
+          message: "Message received (demo mode — email transport not configured).",
         },
-        { status: 500 }
+        { status: 200 }
       );
     }
 

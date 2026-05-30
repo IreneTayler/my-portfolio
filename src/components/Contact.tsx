@@ -73,7 +73,14 @@ const ContactSection = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setStatus({ message: "Message sent successfully. A copy was emailed to you.", type: "success" });
+        if (data.demo) {
+          setStatus({
+            message: "Message received successfully. In production, this would be emailed to the owner and a copy sent to you.",
+            type: "success",
+          });
+        } else {
+          setStatus({ message: "Message sent successfully. A copy was emailed to you.", type: "success" });
+        }
         setFormData({ name: "", email: "", phone: "", message: "" });
         setErrors({});
       } else {
