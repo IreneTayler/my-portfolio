@@ -11,6 +11,17 @@ const questions = [
   "What role does AI play in your daily workflow?",
 ];
 
+const demoAnswers: Record<string, string> = {
+  "What is your strongest technical skill?":
+    "My strongest skill is building responsive, pixel-perfect UIs with React and TypeScript. I excel at translating Figma designs into clean, maintainable code using Tailwind CSS, and I have deep experience with component architecture and state management.",
+  "Describe your experience with API integration.":
+    "I have integrated REST APIs in multiple projects — from fetching data for dashboards to handling authentication flows and file uploads. I use fetch and axios, define TypeScript interfaces for all responses, and handle errors gracefully with retry logic and user-friendly fallback UI.",
+  "How do you approach responsive design?":
+    "I use a mobile-first approach with Tailwind CSS breakpoints, ensuring layouts adapt smoothly across all screen sizes. I test on real devices, optimize touch targets, and maintain readable typography and spacing at every breakpoint.",
+  "What role does AI play in your daily workflow?":
+    "I treat ChatGPT and GitHub Copilot as senior pair programmers. They help me scaffold components faster, suggest algorithms, review logic for edge cases, and debug efficiently. This saves roughly 40% of boilerplate time so I can focus on architecture and UX.",
+};
+
 interface ChatMessage {
   role: "user" | "assistant";
   text: string;
@@ -23,6 +34,7 @@ const AIHelper = () => {
     type: "success" | "error" | "info" | null;
   }>({ message: "", type: null });
   const [loading, setLoading] = useState(false);
+  const [demoMode, setDemoMode] = useState(false);
 
   const askAI = async (question: string) => {
     setLoading(true);
@@ -49,6 +61,16 @@ const AIHelper = () => {
       const data = await response.json();
       if (response.ok && data.success) {
         setMessages((prev) => [...prev, { role: "assistant", text: data.summary }]);
+        setStatus({ message: "", type: null });
+      } else if (
+        data.message?.toLowerCase().includes("openai_api_key") ||
+        data.message?.toLowerCase().includes("not configured")
+      ) {
+        setDemoMode(true);
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", text: demoAnswers[question] || "I'm ready to answer questions once the AI service is fully configured." },
+        ]);
         setStatus({ message: "", type: null });
       } else {
         setStatus({ message: data.message || "AI service error.", type: "error" });
@@ -141,6 +163,11 @@ const AIHelper = () => {
             )}
           </div>
 
+          {demoMode && (
+            <p className="mt-4 text-xs text-gray-500">
+              Running in demo mode — pre-written answers are shown. Set OPENAI_API_KEY to enable live AI responses.
+            </p>
+          )}
           {status.message && status.type === "error" && (
             <p className="mt-4 text-sm text-red-400">{status.message}</p>
           )}
