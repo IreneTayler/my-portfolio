@@ -121,7 +121,7 @@ const AIHelper = () => {
           </div>
 
           {/* Chat area */}
-          <div className="rounded-2xl border border-white/10 bg-[#071010] p-4 md:p-6 min-h-[200px] max-h-[400px] overflow-y-auto space-y-4">
+          <div className="rounded-2xl border border-white/10 bg-[#071010] p-4 md:p-6 min-h-[200px] max-h-[400px] overflow-y-auto space-y-4 custom-scroll">
             {messages.length === 0 && (
               <p className="text-gray-500 text-center py-8">
                 Select a question above to start a conversation with the AI assistant.

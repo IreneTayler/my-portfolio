@@ -12,7 +12,17 @@ html {
   color: #ffffff;
 }
 
-/* Custom scrollbar to match dark theme */
+/* Custom scrollbar — global */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 #0b1a1a;
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 #0b1a1a;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }
