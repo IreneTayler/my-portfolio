@@ -2,6 +2,8 @@
 
 A responsive developer landing page built with Next.js, demonstrating frontend quality, backend API handling, and AI integration.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FIreneTayler%2Fmy-portfolio)
+
 ## Stack
 
 - Next.js 16
@@ -84,3 +86,7 @@ Recommended platforms: **Vercel** (easiest for Next.js), **Railway**, or any Nod
 - Form functionality is implemented server-side, not just as a mailto link.
 - AI integration is routed through the backend, keeping the API key out of client code.
 - The project is structured with reusable React components and clean section separation.
+
+## Vercel deployment note
+
+When deploying to Vercel via the button above, add the **Environment Variables** in the Vercel dashboard (Project Settings → Environment Variables) so the contact form and AI integration work correctly.
