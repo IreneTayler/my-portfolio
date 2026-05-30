@@ -59,6 +59,21 @@ export async function POST(req: Request) {
       },
     });
 
+    // Verify connection before sending — catches auth issues early
+    try {
+      await transporter.verify();
+    } catch (verifyErr) {
+      const errMsg = verifyErr instanceof Error ? verifyErr.message : String(verifyErr);
+      console.error("Nodemailer verify failed:", errMsg);
+      return NextResponse.json(
+        {
+          success: false,
+          message: `Email authentication failed: ${errMsg}. If using Gmail, ensure 2FA is enabled and EMAIL_PASS is a 16-character App Password (not your regular password).`,
+        },
+        { status: 500 }
+      );
+    }
+
     const ownerMail = {
       from: user,
       to: owner,
@@ -97,9 +112,10 @@ I will review your request and reply as soon as possible.`,
 
     return NextResponse.json({ success: true, message: "Message sent successfully." });
   } catch (error) {
-    console.error("Email send error:", error);
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error("Email send error:", errMsg);
     return NextResponse.json(
-      { success: false, message: "Failed to send message." },
+      { success: false, message: `Failed to send message: ${errMsg}` },
       { status: 500 }
     );
   }
