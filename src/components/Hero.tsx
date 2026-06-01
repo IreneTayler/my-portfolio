@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { LuArrowDownToLine } from "react-icons/lu";
 
 const Hero = () => {
   return (
@@ -31,27 +29,6 @@ const Hero = () => {
           >
             Full-Stack Developer
           </motion.p>
-
-          <motion.div
-            className="flex flex-col sm:flex-row items-center sm:space-x-4 space-y-3 sm:space-y-0 mt-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-          >
-            <Link
-              href="#contact"
-              className="px-6 py-3 bg-[#008236] shadow-2xl text-white rounded-lg font-medium hover:bg-[#00c950] hover:shadow-[#23f103] transition-colors duration-300"
-            >
-              Hire Me!
-            </Link>
-            <a
-              href="/Irene_Tayler_CV.pdf"
-              download="Irene_Tayler_CV.pdf"
-              className="px-6 py-3 border-2 border-[#008236] text-[#008236] rounded-lg font-medium hover:bg-[#008236] hover:text-white transition-colors duration-300 items-center flex"
-            >
-              Download CV <LuArrowDownToLine  size={24} className="hover:rotate-45" />
-            </a>
-          </motion.div>
 
         </div>
 
