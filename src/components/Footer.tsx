@@ -86,7 +86,7 @@ const Footer = () => {
             href="https://github.com/IreneTayler/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
+            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
           >
             <FaGithub size={24}/>
           </a>
@@ -94,7 +94,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/Irene-tayler/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
+            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
           >
             <FaLinkedin size={24}/>
           </a>
@@ -102,7 +102,7 @@ const Footer = () => {
             href="https://www.facebook.com/share/1EvVk8tm8E/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
+            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
           >
             <FaFacebook size={24}/>
           </a>
@@ -110,7 +110,7 @@ const Footer = () => {
             href="https://wa.me/8801320694376"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 border-2 border-[#016630] rounded-lg hover:bg-[#005f5a] text-white transition-all duration-300 text-lg"
+            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
           >
             <FaWhatsapp size={24}/>
           </a>

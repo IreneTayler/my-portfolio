@@ -65,7 +65,7 @@ const Hero = () => {
               href="https://github.com/IreneTayler/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-[#008236]/20 rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
             >
               <FaGithub />
             </a>
@@ -74,7 +74,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/Irene-tayler/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-[#008236]/20 rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
             >
               <FaLinkedin />
             </a>
@@ -83,7 +83,7 @@ const Hero = () => {
               href="https://wa.me/8801320694376"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-[#008236]/20 rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
             >
               <FaWhatsapp />
             </a>
@@ -92,7 +92,7 @@ const Hero = () => {
               href="https://www.facebook.com/share/1EvVk8tm8E/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-[#008236]/20 rounded-lg hover:bg-[#008236] text-white transition-all duration-300 text-xl"
+              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
             >
               <FaFacebook />
             </a>
