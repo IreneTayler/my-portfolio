@@ -11,10 +11,10 @@ const Hero = () => {
       id="home"
       className="relative w-full h-[900px] md:h-[1000px] flex items-center justify-center overflow-hidden"
     >
-      <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center justify-between px-4 md:px-12 relative z-10">
+      <div className="container mx-auto flex flex-col items-center justify-center px-4 md:px-12 relative z-10">
         
-        {/* Left Text & Buttons */}
-        <div className="flex-1 text-center lg:text-left space-y-6">
+        {/* Centered Text & Buttons */}
+        <div className="flex-1 text-center space-y-6">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white"
             initial={{ opacity: 0, y: 30 }}
@@ -56,7 +56,7 @@ const Hero = () => {
 
           {/* Social Icons */}
           <motion.div
-            className="flex justify-center md:justify-start space-x-4 mt-6"
+            className="flex justify-center space-x-4 mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -99,36 +99,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Image with Hexagonal Border */}
-        <motion.div
-          className="flex-1 mb-10 md:mb-0 flex justify-center md:justify-end"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          <div className="relative w-64 h-80 sm:w-80 sm:h-[500px] md:w-96 md:h-[600px] lg:w-[400px] lg:h-[650px]">
-            <svg viewBox="0 0 200 260" className="w-full h-full">
-              <defs>
-                <clipPath id="hexClip">
-                  <polygon points="100,10 190,55 190,205 100,250 10,205 10,55" />
-                </clipPath>
-              </defs>
-              <image
-                href="/profile1.png"
-                width="200"
-                height="260"
-                clipPath="url(#hexClip)"
-                preserveAspectRatio="xMidYMid slice"
-              />
-              <polygon
-                points="100,10 190,55 190,205 100,250 10,205 10,55"
-                fill="none"
-                stroke="white"
-                strokeWidth="2"
-              />
-            </svg>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

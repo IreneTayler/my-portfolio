@@ -121,11 +121,11 @@ const ContactSection = () => {
           <div className="space-y-4 text-md">
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaPhone className="text-md" />
-              <span className="text-white">+7 981 098 1772</span>
+              <span className="text-white">+7 981 932-52-95</span>
             </div>
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaEnvelope className="text-md" />
-              <span className="text-white">Irene19tayler@outlook.com</span>
+              <span className="text-white">irene_tayler@mail.ru</span>
             </div>
             <div className="flex items-center gap-3 text-[#00ff88]/70">
               <FaMapMarkerAlt className="text-md" />

@@ -74,23 +74,33 @@ export async function POST(req: Request) {
       );
     }
 
-    const ownerMail = {
-      from: user,
-      to: owner,
-      replyTo: email,
-      subject: `Portfolio message from ${name}`,
-      text: `You have received a new message from your portfolio contact form.
+    const baseText = `You have received a new message from your portfolio contact form.
 
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
 
 Message:
-${message}`,
+${message}`;
+
+    const ownerMail = {
+      from: `"Portfolio Contact" <${user}>`,
+      to: owner,
+      replyTo: email,
+      subject: `Portfolio message from ${name}`,
+      text: baseText,
+    };
+
+    const backupMail = {
+      from: `"Portfolio Contact" <${user}>`,
+      to: user,
+      replyTo: email,
+      subject: `[BACKUP] Portfolio message from ${name}`,
+      text: baseText + "\n\n---\nThis is a backup copy because the primary recipient (mail.ru) may block Gmail emails.",
     };
 
     const userCopyMail = {
-      from: user,
+      from: `"Portfolio Contact" <${user}>`,
       to: email,
       subject: `Copy of your message to my portfolio`,
       text: `Thank you for your message.
@@ -107,10 +117,44 @@ ${message}
 I will review your request and reply as soon as possible.`,
     };
 
-    await transporter.sendMail(ownerMail);
+    let ownerSent = false;
+    let ownerErr = "";
+    let backupSent = false;
+
+    // Try sending to EMAIL_TO (often mail.ru — may reject Gmail SMTP)
+    try {
+      await transporter.sendMail(ownerMail);
+      ownerSent = true;
+    } catch (err) {
+      ownerErr = err instanceof Error ? err.message : String(err);
+      console.error("Failed to send owner email to", owner, ":", ownerErr);
+    }
+
+    // Always send backup to EMAIL_USER (Gmail) so owner gets the message
+    try {
+      await transporter.sendMail(backupMail);
+      backupSent = true;
+    } catch (err) {
+      const backupErr = err instanceof Error ? err.message : String(err);
+      console.error("Failed to send backup email to", user, ":", backupErr);
+    }
+
+    // Always send visitor copy
     await transporter.sendMail(userCopyMail);
 
-    return NextResponse.json({ success: true, message: "Message sent successfully." });
+    if (ownerSent && backupSent) {
+      return NextResponse.json({ success: true, message: "Message sent successfully to all recipients." });
+    } else if (backupSent) {
+      return NextResponse.json({
+        success: true,
+        message: `Message received. Primary delivery to ${owner} failed (${ownerErr}). A backup copy was sent to your Gmail inbox (${user}). Please check Gmail — mail.ru often blocks emails from Gmail SMTP.`,
+      });
+    } else {
+      return NextResponse.json(
+        { success: false, message: `Failed to send message. Primary: ${ownerErr}` },
+        { status: 500 }
+      );
+    }
   } catch (error) {
     const errMsg = error instanceof Error ? error.message : String(error);
     console.error("Email send error:", errMsg);
