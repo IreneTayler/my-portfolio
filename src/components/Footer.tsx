@@ -56,7 +56,6 @@
 
 "use client";
 
-import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Footer = () => {
@@ -73,47 +72,6 @@ const Footer = () => {
         >
           <h2 className="lg:text-2xl text-xl font-semibold text-[#00ff88]/80">Irene Tayler</h2>
           <p className="text-gray-300 text-sm">Full-Stack Developer</p>
-        </motion.div>
-
-        {/* Middle: Social Icons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex justify-center space-x-4 mt-5 md:mt-0"
-        >
-          <a
-            href="https://github.com/IreneTayler/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
-          >
-            <FaGithub size={24}/>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/Irene-tayler/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
-          >
-            <FaLinkedin size={24}/>
-          </a>
-          <a
-            href="https://www.facebook.com/share/1EvVk8tm8E/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
-          >
-            <FaFacebook size={24}/>
-          </a>
-          <a
-            href="https://wa.me/8801320694376"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 text-white hover:text-[#00ff88] transition-all duration-300 text-lg"
-          >
-            <FaWhatsapp size={24}/>
-          </a>
         </motion.div>
 
       </div>

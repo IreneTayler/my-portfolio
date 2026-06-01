@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { LuArrowDownToLine } from "react-icons/lu";
 
 const Hero = () => {
@@ -54,49 +53,6 @@ const Hero = () => {
             </a>
           </motion.div>
 
-          {/* Social Icons */}
-          <motion.div
-            className="flex justify-center space-x-4 mt-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <a
-              href="https://github.com/IreneTayler/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
-            >
-              <FaGithub />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/Irene-tayler/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
-            >
-              <FaLinkedin />
-            </a>
-
-            <a
-              href="https://wa.me/8801320694376"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
-            >
-              <FaWhatsapp />
-            </a>
-
-            <a
-              href="https://www.facebook.com/share/1EvVk8tm8E/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-white hover:text-[#00ff88] transition-all duration-300 text-xl"
-            >
-              <FaFacebook />
-            </a>
-          </motion.div>
         </div>
 
       </div>
