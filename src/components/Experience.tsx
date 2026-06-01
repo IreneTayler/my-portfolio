@@ -50,7 +50,7 @@ const ExperienceSection = () => {
     <section id="experience" className="relative w-full py-20 bg-black/20 text-white px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-[#00ff88]/50 mb-12 border-b pb-2 inline-block text-center mx-auto"
+          className="text-4xl font-bold text-[#00ff88]/50 mb-12 border-b pb-2 inline-block"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -62,46 +62,58 @@ const ExperienceSection = () => {
           </span>
         </motion.h2>
 
-        <p className="text-lg text-gray-300 mb-16 max-w-3xl text-center mx-auto">
+        <p className="text-lg text-gray-300 mb-16 max-w-3xl">
           A timeline of my professional journey, responsibilities, and growth as a developer.
         </p>
 
-        <div className="relative flex flex-col items-center">
-          {/* Vertical timeline line */}
-          <div className="absolute top-0 bottom-0 w-px bg-gray-600"></div>
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-px bg-gray-500 h-full"></div>
 
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.company}
-              className="relative w-full max-w-2xl mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
-              viewport={{ once: true }}
-            >
-              {/* Dot on the line */}
-              <div className="absolute left-1/2 -translate-x-1/2 -top-3 z-10">
-                <div className="w-4 h-4 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></div>
-              </div>
+          {/* Top Dot */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+            <div className="w-3 h-3 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></div>
+          </div>
 
-              {/* Card */}
-              <div className="bg-black/40 rounded-xl p-6 border border-[#00ff88]/20 shadow-lg hover:border-[#00ff88]/40 transition-colors text-center mt-4">
-                <h3 className="text-xl font-semibold text-[#00ff88] mb-1">{exp.role}</h3>
-                <p className="text-sm text-gray-400 mb-1">{exp.company}</p>
-                <p className="text-xs text-gray-500 mb-4">
-                  {exp.period} · {exp.duration}
-                </p>
-                <ul className="space-y-2 text-gray-300 text-sm text-left inline-block">
-                  {exp.highlights.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#00ff88] mt-1 shrink-0">▸</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+          {experiences.map((exp, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <motion.div
+                key={exp.company}
+                className={`relative flex items-start mb-16 ${
+                  isLeft ? "justify-start" : "justify-end"
+                }`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                viewport={{ once: true }}
+              >
+                {/* Dot on timeline */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-2">
+                  <div className="w-3 h-3 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></div>
+                </div>
+
+                {/* Card */}
+                <div className={`w-5/12 ${isLeft ? "pr-8 text-right" : "pl-8 text-left"}`}>
+                  <div className="bg-black/40 rounded-xl p-6 border border-[#00ff88]/20 shadow-lg hover:border-[#00ff88]/40 transition-colors">
+                    <h3 className="text-xl font-semibold text-[#00ff88] mb-1">{exp.role}</h3>
+                    <p className="text-sm text-gray-400 mb-1">{exp.company}</p>
+                    <p className="text-xs text-gray-500 mb-4">
+                      {exp.period} · {exp.duration}
+                    </p>
+                    <ul className={`space-y-2 text-gray-300 text-sm ${isLeft ? "text-right" : "text-left"}`}>
+                      {exp.highlights.map((item, i) => (
+                        <li key={i} className={`flex items-start gap-2 ${isLeft ? "flex-row-reverse" : ""}`}>
+                          <span className="text-[#00ff88] mt-1 shrink-0">▸</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
