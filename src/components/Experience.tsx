@@ -50,7 +50,7 @@ const ExperienceSection = () => {
     <section id="experience" className="relative w-full py-20 bg-black/20 text-white px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <motion.h2
-          className="text-4xl font-bold text-[#00ff88]/50 mb-12 border-b pb-2 inline-block"
+          className="text-4xl font-bold text-[#00ff88]/50 mb-12 border-b pb-2 inline-block text-center mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -62,55 +62,46 @@ const ExperienceSection = () => {
           </span>
         </motion.h2>
 
-        <p className="text-lg text-gray-300 mb-16 max-w-3xl">
+        <p className="text-lg text-gray-300 mb-16 max-w-3xl text-center mx-auto">
           A timeline of my professional journey, responsibilities, and growth as a developer.
         </p>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 md:-translate-x-px w-px bg-gray-600"></div>
+        <div className="relative flex flex-col items-center">
+          {/* Vertical timeline line */}
+          <div className="absolute top-0 bottom-0 w-px bg-gray-600"></div>
 
-          {experiences.map((exp, index) => {
-            const isLeft = index % 2 === 0;
-            return (
-              <motion.div
-                key={exp.company}
-                className={`relative flex flex-col md:flex-row items-start mb-16 ${
-                  isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
-                viewport={{ once: true }}
-              >
-                {/* Dot */}
-                <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-2">
-                  <div className="w-4 h-4 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></div>
-                </div>
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.company}
+              className="relative w-full max-w-2xl mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.15 }}
+              viewport={{ once: true }}
+            >
+              {/* Dot on the line */}
+              <div className="absolute left-1/2 -translate-x-1/2 -top-3 z-10">
+                <div className="w-4 h-4 rounded-full bg-[#00ff88] shadow-[0_0_10px_#00ff88]"></div>
+              </div>
 
-                {/* Content */}
-                <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${
-                  isLeft ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"
-                }`}>
-                  <div className="bg-black/40 rounded-xl p-6 border border-[#00ff88]/20 shadow-lg hover:border-[#00ff88]/40 transition-colors">
-                    <h3 className="text-xl font-semibold text-[#00ff88] mb-1">{exp.role}</h3>
-                    <p className="text-sm text-gray-400 mb-1">{exp.company}</p>
-                    <p className="text-xs text-gray-500 mb-4">
-                      {exp.period} · {exp.duration}
-                    </p>
-                    <ul className={`space-y-2 text-gray-300 text-sm ${isLeft ? "md:text-right" : "md:text-left"}`}>
-                      {exp.highlights.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 md:items-center">
-                          <span className="text-[#00ff88] mt-1 md:mt-0 shrink-0">▸</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
+              {/* Card */}
+              <div className="bg-black/40 rounded-xl p-6 border border-[#00ff88]/20 shadow-lg hover:border-[#00ff88]/40 transition-colors text-center mt-4">
+                <h3 className="text-xl font-semibold text-[#00ff88] mb-1">{exp.role}</h3>
+                <p className="text-sm text-gray-400 mb-1">{exp.company}</p>
+                <p className="text-xs text-gray-500 mb-4">
+                  {exp.period} · {exp.duration}
+                </p>
+                <ul className="space-y-2 text-gray-300 text-sm text-left inline-block">
+                  {exp.highlights.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-[#00ff88] mt-1 shrink-0">▸</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
