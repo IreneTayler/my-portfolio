@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 import { FaRobot, FaUser, FaSpinner } from "react-icons/fa";
 
 const questions = [
-  "What is your strongest technical skill?",
-  "Describe your experience with API integration.",
-  "How do you approach responsive design?",
-  "What role does AI play in your daily workflow?",
+  "What are you best at?",
+  "Tell me about a project you're proud of",
+  "How do you work with designers?",
+  "Do you actually use AI, or is this just for show?",
 ];
 
 const demoAnswers: Record<string, string> = {
-  "What is your strongest technical skill?":
-    "My strongest skill is building responsive, pixel-perfect UIs with React and TypeScript. I excel at translating Figma designs into clean, maintainable code using Tailwind CSS, and I have deep experience with component architecture and state management.",
-  "Describe your experience with API integration.":
-    "I have integrated REST APIs in multiple projects — from fetching data for dashboards to handling authentication flows and file uploads. I use fetch and axios, define TypeScript interfaces for all responses, and handle errors gracefully with retry logic and user-friendly fallback UI.",
-  "How do you approach responsive design?":
-    "I use a mobile-first approach with Tailwind CSS breakpoints, ensuring layouts adapt smoothly across all screen sizes. I test on real devices, optimize touch targets, and maintain readable typography and spacing at every breakpoint.",
-  "What role does AI play in your daily workflow?":
-    "I treat ChatGPT and GitHub Copilot as senior pair programmers. They help me scaffold components faster, suggest algorithms, review logic for edge cases, and debug efficiently. This saves roughly 40% of boilerplate time so I can focus on architecture and UX.",
+  "What are you best at?":
+    "Turning messy Figma files into working interfaces. I enjoy the translation process — figuring out how to make the design actually work in code without losing the intent. React and TypeScript are my tools of choice.",
+  "Tell me about a project you're proud of":
+    "The theater management platform at my current job. It started as a simple ticket system but grew into something much larger — guest profiles, payment integration, seating charts. Watching it actually get used by real people is satisfying.",
+  "How do you work with designers?":
+    "I ask questions early. Better to clarify something in Figma than rebuild it later. I also push back when something won't work technically — but I try to offer alternatives instead of just saying no.",
+  "Do you actually use AI, or is this just for show?":
+    "Every day. Copilot handles the tedious stuff — writing tests, scaffolding components, suggesting imports. I use ChatGPT for rubber-duck debugging and when I need to understand something unfamiliar quickly. It's a tool, not a replacement for thinking.",
 };
 
 interface ChatMessage {
@@ -93,9 +93,9 @@ const AIHelper = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-bold text-[#00ff88] mb-4">AI Integration</h2>
+          <h2 className="text-4xl font-bold text-[#00ff88] mb-4">Ask Me Anything</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            This section demonstrates a real AI assistant powered by OpenAI. Ask a question about my profile — the backend securely forwards the request and returns a contextual answer.
+            An AI assistant trained on my actual work. Ask whatever you want to know.
           </p>
         </motion.div>
 
@@ -166,7 +166,7 @@ const AIHelper = () => {
 
           {demoMode && (
             <p className="mt-4 text-xs text-gray-500">
-              Running in demo mode — pre-written answers are shown. Set OPENAI_API_KEY to enable live AI responses.
+              Demo mode — the AI backend isn&apos;t connected right now, so you&apos;re seeing my actual thoughts instead.
             </p>
           )}
           {status.message && status.type === "error" && (

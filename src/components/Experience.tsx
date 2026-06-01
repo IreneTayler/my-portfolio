@@ -9,12 +9,11 @@ const experiences = [
     period: "Апрель 2026 — настоящее время",
     duration: "3 месяца",
     highlights: [
-      "Developed guest profile pages for a theater management platform.",
-      "Built the ticket system using Convex and Next.js.",
-      "Integrated YooKassa payment processing.",
-      "Fixed database issues related to duplicate user creation.",
-      "Implemented frontend features from Figma designs.",
-      "Improved overall user experience across the platform.",
+      "Building guest profile pages for a theater management system",
+      "Ticket booking flow with Convex and Next.js",
+      "YooKassa payment integration — the fun part was handling the edge cases",
+      "Fixed a persistent duplicate user bug that had been annoying everyone",
+      "Frontend work from Figma — the usual translation from design to code",
     ],
   },
   {
@@ -23,12 +22,11 @@ const experiences = [
     period: "Август 2022 — Август 2025",
     duration: "3 года и 1 месяц",
     highlights: [
-      "Frontend development using Vue.js.",
-      "Backend development with Node.js and PHP.",
-      "Creating and maintaining REST APIs.",
-      "Working with databases and data processing.",
-      "Developing internal platforms and dashboards.",
-      "Implementing full-stack functionality end-to-end.",
+      "Vue.js frontend for internal tools — lots of dashboards and data tables",
+      "Node.js and PHP APIs — whatever the project needed",
+      "Built a content management system from scratch when off-the-shelf didn't fit",
+      "Database work — MySQL, query optimization, the usual maintenance",
+      "Three years of learning how to build things that actually get used",
     ],
   },
   {
@@ -37,10 +35,10 @@ const experiences = [
     period: "Апрель 2020 — Август 2022",
     duration: "2 года и 5 месяцев",
     highlights: [
-      "Full-stack web application development for clients.",
-      "Creating user interfaces and backend logic.",
-      "API integration and database design.",
-      "Debugging and performance optimization.",
+      "Various client projects — WordPress sites, custom apps, fixes",
+      "Learned how to scope work and manage expectations",
+      "Figured out that communication matters as much as code",
+      "Built a foundation for the more complex work later",
     ],
   },
 ];
@@ -62,8 +60,8 @@ const ExperienceSection = () => {
           </span>
         </motion.h2>
 
-        <p className="text-lg text-gray-300 mb-16 max-w-3xl">
-          A timeline of my professional journey, responsibilities, and growth as a developer.
+        <p className="text-lg text-gray-400 mb-16 max-w-3xl">
+          Where I&apos;ve worked and what I actually did there.
         </p>
 
         <div className="relative">

@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "Kindertales",
     description:
-      "A childcare management platform for daycare centers. I was responsible for recreating the entire landing page from scratch based on the existing design. I chose React + TypeScript + Tailwind CSS, built a component-based architecture with reusable UI elements, and ensured full responsiveness across mobile, tablet, and desktop. I also implemented scroll animations and optimized image loading for performance.",
+      "Childcare management platform. I rebuilt their landing page from an existing design — React, TypeScript, Tailwind. Made it responsive, added scroll animations, fixed the image loading issues they'd been having.",
     image: "/Kindertales1.png",
     image2: "/Kindertales2.png",
     image3: "/Kindertales3.png",
@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     title: "MyAIWiz",
     description:
-      "An AI-powered SaaS platform for automated tax document processing. I personally implemented the marketing landing page, translating Figma designs into pixel-perfect React components. I handled form validation, responsive breakpoints, and component reuse patterns that reduced code duplication by roughly 30%. The page was built with accessibility in mind (ARIA labels, keyboard navigation).",
+      "AI tax document processing platform. I built the marketing site from Figma designs. Forms, validation, responsive breakpoints — the usual. Focused on making it work well on mobile since that's where most of their traffic came from.",
     image: "/MyAIWiz1.png",
     image2: "/MyAIWiz2.png",
     image3: "/MyAIWiz3.png",
@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     title: "Construkted",
     description:
-      "A 3D photogrammetry platform for architectural visualization. I contributed to the frontend UI that handles model uploads, viewer controls, and user dashboards. I worked on responsive layouts for the control panels, integrated REST API endpoints for model metadata, and collaborated with the 3D team to ensure UI performance did not degrade WebGL rendering.",
+      "3D photogrammetry platform for architects. I worked on the frontend — model uploads, viewer controls, user dashboards. Had to be careful with performance since the 3D rendering was heavy. Mostly React and API integration work.",
     image: "/Construkted1.png",
     image2: "/Construkted2.png",
     image3: "/Construkted3.png",
@@ -62,12 +62,11 @@ export default function ProjectsSection() {
         </motion.h2>
 
         <motion.p
-          className="mt-3 text-gray-300 text-sm max-w-xl mx-auto"
+          className="mt-3 text-gray-400 text-sm max-w-xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          A selection of projects demonstrating my expertise in front-end
-          development and design.
+          Some things I&apos;ve built.
         </motion.p>
       </div>
 

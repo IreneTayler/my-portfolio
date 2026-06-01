@@ -34,7 +34,7 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          I&apos;m Irene Tayler — a Full-Stack Developer with 5+ years of experience building web applications for teams in Russia and China.
+          I build web applications. Started with freelance work, spent three years at a company in China, and now I&apos;m in St. Petersburg working on a theater management platform. Five years of figuring things out and getting better at it.
         </motion.p>
 
         <motion.p
@@ -44,7 +44,7 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          I work across the full stack: React, Next.js, and Vue.js on the frontend; Node.js, PHP, and Python (FastAPI) on the backend. I translate Figma designs into pixel-perfect interfaces, design REST APIs, and integrate payment systems like YooKassa.
+          React and TypeScript are what I use most. Vue when the project calls for it. Node or FastAPI on the backend depending on what makes sense. I care about how things look — not just that they work, but that they feel right to use.
         </motion.p>
 
         <motion.p
@@ -54,7 +54,7 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          I use AI tools daily — ChatGPT and GitHub Copilot are part of my workflow for scaffolding, debugging, and architecture decisions. I value clean code, fast load times, and interfaces that simply work.
+          I use Copilot and ChatGPT like any sensible developer would. They speed up the boring parts so I can focus on the actual problems. The goal is always the same: something that works well and doesn&apos;t make users think too hard.
         </motion.p>
 
         <motion.div
