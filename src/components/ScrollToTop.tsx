@@ -41,14 +41,16 @@ const ScrollToTop: React.FC = () => {
           aria-label="Scroll to top"
         >
           <svg className="absolute -top-1 -left-1 w-12 h-12" viewBox="0 0 64 64">
+            {/* Background track */}
             <circle
               cx="32"
               cy="32"
               r={radius}
-              stroke=""
+              stroke="#0b1a1a"
               strokeWidth="4"
               fill="none"
             />
+            {/* Progress indicator */}
             <circle
               cx="32"
               cy="32"
@@ -61,16 +63,9 @@ const ScrollToTop: React.FC = () => {
               strokeLinecap="round"
               transform="rotate(-90 32 32)"
             />
-            <defs>
-              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" />
-                <stop offset="50%" stopColor="#ec4899" />
-                <stop offset="100%" stopColor="#f43f5e" />
-              </linearGradient>
-            </defs>
           </svg>
 
-          <TbArrowDownFromArc  className="text-[#00ff88] w-4 h-8 relative z-10 drop-shadow-lg animate-bounce-slow" />
+          <TbArrowDownFromArc className="text-[#00ff88] w-4 h-8 relative z-10 drop-shadow-lg animate-bounce-slow rotate-180" />
         </button>
       )}
     </>
