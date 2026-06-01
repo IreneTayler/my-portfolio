@@ -6,69 +6,72 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative w-full py-20 bg-black/20 text-white px-6 md:px-12 overflow-hidden"
+      className="relative w-full py-24 bg-black/20 text-white px-6 md:px-12"
     >
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-
-        {/* Left: Education & Summary */}
-        <motion.div
-          className="flex-1 flex justify-center md:justify-start"
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+      <div className="max-w-3xl mx-auto text-center">
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-[#00ff88]/80 mb-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <motion.div
-            className="relative w-full max-w-md"
-            whileInView={{ y: [-8, 8, -8] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="flex flex-col items-center justify-center w-full bg-black/30 rounded-lg p-6 border border-[#00ff88]/20">
-              <div className="p-4 rounded-lg w-full">
-                <p className="text-[#00ff88]/60 border-b border-[#00ff88]/30 pb-2 mb-4 font-semibold">
-                  Education & Focus
-                </p>
-                <p className="text-gray-200 leading-relaxed">
-                  Bachelor of Engineering in Software Engineering
-                </p>
-                <p className="h-4"></p>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Full-Stack Developer with 5+ years of experience building production-grade web applications. Passionate about clean architecture, performance optimization, and translating complex requirements into simple, scalable solutions.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
+          About Me
+        </motion.h2>
 
-        {/* Right: About Me */}
         <motion.div
-          className="flex-1 bg-black/30 border border-[#00ff88]/30 p-6 space-y-4 rounded-lg"
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          className="w-16 h-0.5 bg-[#00ff88]/40 mx-auto mb-10"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+
+        <motion.p
+          className="text-lg md:text-xl text-gray-200 leading-relaxed mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
         >
-          <h2 className="text-2xl font-bold text-center border-b border-[#00ff88]/30 text-[#00ff88]/70 pb-2">
-            About Me
-          </h2>
+          I&apos;m Irene Tayler — a Full-Stack Developer with 5+ years of experience building web applications for teams in Russia and China.
+        </motion.p>
 
-          <p className="text-white text-md leading-relaxed">
-            Hi, I&apos;m <span className="text-[#00ff88]/60">Irene Tayler</span>, a Full-Stack Developer based in St. Petersburg, Russia. I have 5+ years of hands-on experience building modern, responsive web applications for companies in Russia and China.
-          </p>
+        <motion.p
+          className="text-gray-300 leading-relaxed mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          I work across the full stack: React, Next.js, and Vue.js on the frontend; Node.js, PHP, and Python (FastAPI) on the backend. I translate Figma designs into pixel-perfect interfaces, design REST APIs, and integrate payment systems like YooKassa.
+        </motion.p>
 
-          <p className="text-white text-md leading-relaxed">
-            I specialize in <span className="text-[#00ff88]/60">frontend development with React, Next.js, and Vue.js</span>, as well as <span className="text-[#00ff88]/60">backend systems using Node.js, PHP, and Python (FastAPI)</span>. I routinely translate Figma designs into pixel-perfect interfaces and build scalable APIs.
-          </p>
+        <motion.p
+          className="text-gray-300 leading-relaxed mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+        >
+          I use AI tools daily — ChatGPT and GitHub Copilot are part of my workflow for scaffolding, debugging, and architecture decisions. I value clean code, fast load times, and interfaces that simply work.
+        </motion.p>
 
-          <p className="text-white text-md leading-relaxed">
-            My recent work at <span className="text-[#00ff88]/60">СЕЧ ГРУПП</span> involved developing a theater management platform with Convex, Next.js, and YooKassa payment integration. Previously, at <span className="text-[#00ff88]/60">Guangzhou Character Union Media</span>, I built internal platforms and dashboards using Vue.js and Node.js.
-          </p>
-
-          <p className="text-white text-md leading-relaxed">
-            I use <span className="text-[#00ff88]/60">AI tools such as ChatGPT and GitHub Copilot</span> to accelerate development, generate boilerplate, and review logic — letting me focus on architecture and user experience.
-          </p>
-
-          <p className="text-white text-md leading-relaxed">
-            My goal is to deliver efficient, well-structured software that solves real business problems and provides an excellent user experience.
-          </p>
+        <motion.div
+          className="flex flex-wrap justify-center gap-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          {["St. Petersburg, Russia", "irene_tayler@mail.ru", "+7 981 932-52-95"].map((item) => (
+            <span
+              key={item}
+              className="px-4 py-2 text-sm text-[#00ff88]/80 border border-[#00ff88]/20 rounded-full bg-black/20"
+            >
+              {item}
+            </span>
+          ))}
         </motion.div>
       </div>
     </section>
